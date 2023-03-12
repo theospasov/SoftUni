@@ -1,3 +1,3 @@
-# SU-Programming-Fundamentals-2022-Sept
-Solving exercise problems from SoftUni Programming Fundamentals 2022.09
+# SoftUni JavaScrpt Web Developer Path
+Solving exercise problems from SoftUni JavaScrpt Web Developer Path
 Change 1
