@@ -7,7 +7,6 @@ function attachEvents() {
     const nameArea = document.querySelector('input[name="author"]')
     const messageArea = document.querySelector('input[name="content"]')
 
-
     submitBtn.addEventListener('click', () => {
 
         let messageObj = {
