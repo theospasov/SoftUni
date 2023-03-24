@@ -4,18 +4,16 @@ const inputField = document.getElementById('towns')
 const loadButton = document.getElementById('btnLoadTowns')
 const root = document.getElementById('root')
 
-let inputFieldValue = []
-
 loadButton.addEventListener('click', loadTowns)
 
 function loadTowns(e) {
     e.preventDefault()
-    inputFieldValue = inputField.value.split(', ')
-    render(townTemplate(), root)
+    const inputFieldValue = inputField.value.split(', ')
+    render(townTemplate(inputFieldValue), root)
 }
 
 
-let townTemplate = () => html `
+let townTemplate = (inputFieldValue) => html `
     <ul>
         ${inputFieldValue.map(x => html`<li>${x}</li>`)}
     </ul>
