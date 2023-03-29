@@ -8,7 +8,6 @@ const endpoints = {
     logout: '/users/logout'
 }
 
-// TODO Change user object according to project requirements
 
 export async function login(email, password) {
     const result = await post(endpoints.login, {email, password})

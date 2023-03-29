@@ -7,12 +7,17 @@ import {  loginPage } from './views/login.js'
 import { registerPage } from './views/register.js'
 import { logout } from './data/auth.js'
 import { catalogPage } from './views/catalog.js'
+import { detailsPage } from './views/details.js'
+import { createPage } from './views/create.js'
+import {editPage} from '../src/views/edit.js'
 
+/*
 import * as api from './data/offers.js'
 window.api = api
+*/
 
-// TODO Change render root depending in project 
-const root = document.body
+
+const root = document.querySelector('#wrapper')
 
 page(decorateContext)
 page.redirect('index.html', '/')
@@ -21,6 +26,10 @@ page('/login', loginPage)
 page('/register', registerPage)
 page('/logout', logoutAction)
 page('/catalog', catalogPage)
+page('/catalog/:id', detailsPage)
+page('/create', createPage)
+page('/catalog/:id/edit', editPage)
+
 
 page.start()
 
@@ -30,7 +39,7 @@ function decorateContext(ctx, next) {
     next()
 }
 
-// TODO Inject dependencies
+
 function renderView(content) {
     const userData = getUserData()
     render(layoutTemplate(userData, content), root)

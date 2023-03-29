@@ -2,7 +2,7 @@ import { get, post, del, put } from "./api.js";
 
 const endpoints = {
     catalog: '/data/offers?sortBy=_createdOn%20desc',
-    byId : '/data/offers'
+    byId : '/data/offers/'
 }
 
 export async function getAllOffers() {
