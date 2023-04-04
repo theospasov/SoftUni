@@ -10,7 +10,6 @@ class SummerCamp {
         
         if (!this.priceFotTheCamp[condition]) {
             throw new Error ('Unsuccessful registration at the camp.')
-            //console.log('yes');
         }
 
     
@@ -45,7 +44,6 @@ class SummerCamp {
                 throw new Error (`Invalid entered name/s.`)
             }
             player1.power += 20
-            // console.table(this.listOfParticipants)
             return `The ${participant1} successfully completed the game ${typeOfGame}.`
         }
 
