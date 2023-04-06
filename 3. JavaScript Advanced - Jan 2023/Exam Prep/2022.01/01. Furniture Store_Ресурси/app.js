@@ -18,18 +18,9 @@ function solve() {
         let targetSection = document.getElementById('furniture-list')
 
         if(typeof modelInput == 'string' && modelInput.length > 0 && typeof descriptionInput == 'string' && descriptionInput.length > 0 && yearInput == Number(yearInput) && yearInput > 0 && priceInput == Number(priceInput) && priceInput > 0) {
-            // if (true) {
-            //     console.log(typeof modelInput == 'string')
-            //     console.log(modelInput.length > 0)
-            //     console.log(typeof descriptionInput == 'string')
-            //     console.log(descriptionInput.length > 0)
-            //     console.log(yearInput == Number(yearInput))
-            //     console.log(yearInput > 0)
-            //     console.log(priceInput == Number(priceInput))
-            //     console.log(priceInput > 0)
+ 
 
         // creating the taken elements - VISIBLE
-
         let visibleTr = document.createElement('tr')
         visibleTr.className = 'info'
 
@@ -110,34 +101,6 @@ function solve() {
             totalEl.textContent = priceInTable.textContent
             visibleTr.remove()
             hiddenTableRow.remove()
-        
-        // WRONG FUNCTIONALITY THAT WORKS
-        // buyItButton.addEventListener('click', () => {
-        //     let totalEl = document.getElementsByClassName('total-price')[0]
-
-        //     let totalToPay = document.querySelectorAll('.info td')
-        //     let onlyNumbers = Array.from(totalToPay)
-        //     let onlyNumbers2 = onlyNumbers.filter((x) => x.textContent.includes('.'))
-        //     let currPrice = onlyNumbers2.map((x) => x = Number(x.textContent))
-
-        //     let latestPrice = Number(totalEl.textContent)
-
-        //     let finalPrice = Number(currPrice) + Number(latestPrice)
-
-        //     totalEl.textContent = finalPrice.toFixed(2)
-            
-        //     visibleTr.remove()
-        //     hiddenTableRow.remove()
-            
-            
-            // WRONG FUNCTIONALITY THAT WORKS 
-            // let totalToPay = document.querySelectorAll('.info td')
-            // let onlyNumbers = Array.from(totalToPay)
-            // let onlyNumbers2 = onlyNumbers.filter((x) => x.textContent.includes('.'))
-            // let finalNumber = Number(onlyNumbers2.map((x) => x = Number(x.textContent)).reduce((acc, bcc) => acc + bcc)).toFixed(2)
-            // //finalNumber = Number(finalNumber)
-
-            
 
         })
     }
