@@ -14,10 +14,6 @@ function solve() {
             let btnAddToTheList = document.getElementById('add')
             let btnReset = document.getElementById('reset')
 
-            // let generalInputRecipirnt = ''
-            // let generalInputTitle = ''
-            // let generaInputMessage = ''
-
             //0.1.2 List of Mails Section
             let sectionListOfMails = document.getElementById('list')
 
@@ -26,10 +22,6 @@ function solve() {
 
     // 1. All fields are non-empty strings
 
-
-    
-    
-    //console.log(`the fields aren't empty`);
 
         //1.1 Reset btn
         btnReset.addEventListener('click', (e)=> {
@@ -105,19 +97,6 @@ function solve() {
             })
 
         })
-
-    // 2. Send Mails
-    
-    
-
-
-        
-
-
-
-    // let toDeleteTheOldInformation = sectionListOfMails.children[0]
-    // toDeleteTheOldInformation.remove()
-
 
 
 }
