@@ -15,9 +15,6 @@ class CarDealership {
         this.availableCars.push({model, horsepower, price, mileage })
         return `New car added: ${model} - ${horsepower} HP - ${mileage.toFixed(2)} km - ${price.toFixed(2)}$`
 
-
-
-
     }
 
     sellCar(model, desiredMileage) {
@@ -53,8 +50,6 @@ class CarDealership {
         this.totalIncome += Number(currCar.price)
         this.soldCars.push(soldCar)
         
-        // console.table( this.availableCars);
-        // console.table(this.soldCars)
         this.availableCars.filter(x => x != currCar)
         return `${currCar.model} was sold for ${currCar.price}$`
 
@@ -67,7 +62,7 @@ class CarDealership {
         if(this.availableCars.length == 0) {
             return `There are no available cars`
         } else {
-           // console.log(this.availableCars)
+
             for (const currEl of this.availableCars) {
                 finalText += `\n---${currEl.model} - ${currEl.horsepower} HP - ${(currEl.mileage).toFixed(2)} km - ${(currEl.price).toFixed(2)}$`
             }
