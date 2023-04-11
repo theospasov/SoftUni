@@ -88,16 +88,9 @@ function solve() {
                 let newEl8SentMail8Li = document.createElement('li')
                 let textUn = e.target.parentElement.parentElement
                 console.log(textUn)
-            
-
-                
-
-
                 
             })
 
         })
-
-
 }
 solve()
