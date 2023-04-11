@@ -11,7 +11,6 @@ class CarDealership {
             throw new Error ("Invalid input!")
         }
 
-
         this.availableCars.push({model, horsepower, price, mileage })
         return `New car added: ${model} - ${horsepower} HP - ${mileage.toFixed(2)} km - ${price.toFixed(2)}$`
 
