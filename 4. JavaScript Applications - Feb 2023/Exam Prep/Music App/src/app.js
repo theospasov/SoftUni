@@ -11,10 +11,10 @@ import { detailsPage } from './views/details.js'
 import { createPage } from './views/create.js'
 import {editPage} from '../src/views/edit.js'
 
-/*
-import * as api from './data/offers.js'
-window.api = api
-*/
+
+// import * as api from './data/offers.js'
+// window.api = api
+
 
 
 const root = document.querySelector('#box')
