@@ -1,0 +1,32 @@
+<h1>{{message}}</h1>
+
+{{#if username}} {{!-- if helper - if truthy, the welcome message will appear --}} 
+<p>Welcome, {{username}}</p>
+{{else}} 
+<p>Welcome, guest</p>
+
+{{/if}}
+
+
+<p>{{welcome}}</p>
+
+<ul>
+    <li>{{product.name}} available for {{product.price}}</li>
+</ul>
+
+{{#with product}} {{!-- Helper - changes the context, in other words it changes the Object in which we will look for the needed data; in our case we're changing the context from the Object after the 'home' to the Object product, so we need to remove the product. --}} 
+<ul>
+    <li>{{name}} available for {{price}}</li>
+</ul>
+{{/with}}
+
+
+{{#if contacts}}
+<ul>
+    {{#each contacts}} {{!-- each helper - for each Array/Object element repeat the following ; the context will change to the one that is next to #each  --}} 
+        {{>userCard}}
+    {{/each}}
+</ul> 
+{{else}} {{!-- else will execute if the Array is empty --}} 
+        <p>No users</p>
+{{/if}}
