@@ -1,0 +1,50 @@
+body {
+    background-color: beige;
+}
+
+#content {
+    width: 980px;
+    background-color:azure;
+    margin: auto
+}
+
+h1 {
+    color: blue;
+}
+
+nav {
+    background-color:lavender;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav a {
+    text-decoration: none;
+    background-color: cadetblue;
+    padding: 4px 8px;
+    color: white
+}
+
+nav a:hover {
+    background-color: aquamarine;
+}
+
+#main {
+    padding: 32px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+label span {
+    display: inline-block;
+    width: 60px;
+}
