@@ -1,0 +1,11 @@
+[
+    {
+        "id": "1234",
+        "name": "Room",
+        "description": "Single room",
+        "city": "Bansko",
+        "beds": 2,
+        "price": 120,
+        "imgUrl": "/static/assets/room1.jpg"
+    }
+]
