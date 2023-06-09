@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1234",
+        "name": "Room",
+        "description": "Single room",
+        "city": "Bansko",
+        "beds": 2,
+        "price": 120,
+        "imgUrl": "/static/assets/room1.jpg"
+    },
+    {
+        "id": "0c1fa8",
+        "name": "Presidential Suite",
+        "description": "The Most Expensive Suites at Vegas’s Top Hotels",
+        "city": "Burgas",
+        "beds": 4,
+        "price": 210,
+        "imgUrl": "/static/assets/room4.jpg"
+    },
+    {
+        "id": "04b515",
+        "name": "Ocean Room",
+        "description": "Room with aquarium",
+        "city": "Varna",
+        "beds": 3,
+        "price": 300,
+        "imgUrl": "/static/assets/room5.jpg"
+    },
+    {
+        "id": "001387",
+        "name": "we",
+        "description": "dw",
+        "city": "ww",
+        "beds": 2,
+        "price": 2,
+        "imgUrl": "wd"
+    }
+]

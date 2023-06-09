@@ -1,0 +1,19 @@
+<section>
+    {{#with room}} {{!-- 1. --}}
+    <h1>{{name}} - Details</h1>
+    <main>
+        <div>
+            <img src="{{imgUrl}}" width="200px">
+        </div>
+        <p>{{description}}</p>
+        <p><strong>Price per night: {{price}}</strong></p>
+
+        <div class="action add-facilities">
+            <a href="/facility/create/{{_id}}/decorateRoom">Edit Facilities</a>
+        </div>
+    </main>
+    {{/with}}
+</section>
+
+
+
