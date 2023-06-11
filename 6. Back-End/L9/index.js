@@ -17,6 +17,16 @@ const server = require('http').createServer((req, res) => {
             console.log(cookiesObject);
         }
         //console.log(req.headers.cookie);
+
+        // Sessions
+        const sessions = {}
+        if(cookies.sessionId) {
+            sessions = sessions[cookie.sessionId] || {}
+        } else {
+            sessionId = Math.random()
+        }
+
+
         res.writeHead(200, {
             'Set-Cookie': `visited=${visitedCounter}; httpOnly`
         })
