@@ -1,0 +1,26 @@
+<section>
+    {{#with room}} {{!-- 1. --}}
+    <h1>{{name}} - Details</h1>
+    <main>
+        <div>
+            <img src="{{imgUrl}}" width="200px">
+        </div>
+        <div class="details">
+                    <p>{{description}}</p>
+                    <p>Location: {{city}}</p>
+                    <p>Number of beds {{beds}}</p>
+                    <p><strong>Price per night: {{price}}</strong></p>
+
+        </div>
+
+        <div class="action add-facilities">
+            <a href="/facility/create/{{_id}}/decorateRoom">Edit Facilities</a>
+        </div>
+    </main>
+    {{/with}}
+</section>
+
+
+
+
+{{!-- 1. We need to change the context. In the catalogController, in router.get('/:id' we have this in the context:  title: 'Room Details', room. room is a context property, not context this is why we can either write each key of the property like roo.name or we can simply change the context of the whole block--}}

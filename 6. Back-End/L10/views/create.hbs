@@ -1,0 +1,29 @@
+<section>
+    <h1>Create New Room</h1>
+    <main>
+        <form class="aligned" action="/create" method="post">
+            {{#if error}} {{!-- If we have wrong info in the Form, an error message will be shown. The error that is in the if comes from the createController -> router.post( -> catch as context --}}
+                {{!-- 1* v1 - all fields are required --}}
+                {{!-- v2 - array of errors --}}
+                <div class="error-box">
+                    {{#each error}} {{!-- We get out error messages as an Array of stings, this is why we have to render each error separately (createController.js -> router.post( -> catch -> res.render( -> error:)  --}}
+                        <p>{{this}}</p> {{!-- this, instead of error - is used when we have #each on an Array of strings --}}
+                    {{/each}}
+                </div>
+            {{/if}}
+
+
+            <label><span>Name</span><input type="text" name="name"></label> {{!-- the <span> is because of the css --}}
+            <label><span>City</span><input type="text" name="city"></label> {{!-- name - must be the same as the key we want to add the value to --}}
+            <label><span>Beds</span><input type="number" name="beds"></label>
+            <label><span>Price per night</span><input type="number" name="price"></label>
+            <label><span>Image URL</span><input type="text" name="imgUrl"></label>
+            <label><span>Description</span><textarea name="description"></textarea></textarea></label>
+            <button>Submit</button>
+        </form> {{!-- without an action the form will lead to the initializing pag. Even though we're using the same page, it's good to add it still, because we might change the url in the future --}}
+    </main>
+</section>
+
+
+{{!-- 1*
+<div class="error-box"><p>{{error}}</p></div> --}}

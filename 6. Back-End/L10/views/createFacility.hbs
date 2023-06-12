@@ -1,0 +1,19 @@
+<section>
+    <h1>Create New Facility</h1>
+    <main>
+        <form class="aligned" action="/facility/create" method="post">
+
+            <div class="col aligned">
+            <label><span>Label</span><input type="text" name="label"></label> {{!-- the <span> is because of the css --}}
+            <label><span>Icon URL</span><input type="text" name="iconUrl"></label>
+            </div>
+            <div class="align-center">
+                <input type="submit" value="Publish item"></label>
+            </div>
+        </form> {{!-- without an action the form will lead to the initializing pag. Even though we're using the same page, it's good to add it still, because we might change the url in the future --}}
+    </main>
+</section>
+
+
+{{!-- 1*
+<div class="error-box"><p>{{error}}</p></div> --}}

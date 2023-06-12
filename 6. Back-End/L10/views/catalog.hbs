@@ -1,0 +1,20 @@
+<section id="catalog-section" class="spaced">
+    <h1 class="item">All Accommodations</h1>
+    {{#if rooms}}
+        <main>
+            <ul class="catalog cards">
+                {{#each rooms}} {{!-- We get the rooms from catalogController and we did put them inside the context of catalog.hbs; this is why we can use them here ---}}
+                {{> roomCard}} {{!-- This is a partial, in attaches another template; we put in views/partials ---}}
+                {{/each}}
+            </ul>
+        </main>
+    {{else}}
+        <main class="item pad-large align-center">
+            <p>Nothing has been listed yet. Be the first!</p>
+            <div>
+                <a class="action" href="/create">Host Accomodation</a>
+            </div>
+        </main>
+
+    {{/if}}
+</section>

@@ -1,0 +1,7 @@
+<li>
+    <img src="{{imgUrl}}" alt="image of the room" width="150px">
+    <br>
+    <strong>{{name}} - {{price}}€ </strong>
+    <p>{{city}}</p>
+    <p><a href="/catalog/{{_id}}">Details</a></p> {{!-- Before DB it was "/catalog/{{id}}", after implementing it it should be "/catalog/{{_id}}", because ids in DB are written as _id --}}
+</li>
