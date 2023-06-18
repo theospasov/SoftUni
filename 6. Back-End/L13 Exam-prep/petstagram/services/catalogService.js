@@ -18,9 +18,9 @@ async function update(id, photo) {
 
     existing.name = photo.name
     existing.imageUrl = photo.imageUrl
-    existing.age = hotel.age
-    existing.description = hotel.description
-    existing.location = hotel.location
+    existing.age = photo.age
+    existing.description = photo.description
+    existing.location = photo.location
  
 
 

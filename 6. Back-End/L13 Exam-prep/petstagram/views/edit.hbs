@@ -1,18 +1,34 @@
-<section id="viewAddhotel">
-    <h2>Edit existing hotel</h2>
-    {{#with hotel}}
-    <form id="formAddhotel" method="post" action="/catalog/{{_id}}/edit">
-        <label for="hotel">Hotel name:</label>
-        <input type="text" id="hotel" name="name" value="{{name}}">
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" value="{{city}}">
-        <label for="free-rooms">Free rooms:</label>
-        <input type="number" id="free-rooms" name="rooms" value="{{rooms}}">
-        <label for="imgUrl">Image:</label>
-        <input type="text" id="imgUrl" name="imageUrl"
-            value="{{imageUrl}}">
- 
-        <input type="submit" class="create" value="Add">
-    </form>
-    {{/with}}
-</section>
+
+<main>
+    <!-- Start Add Photo Section -->
+    <div class="editPage">
+        <h2>Edit photo</h2>
+        <!-- Start Add Photo Form -->
+        {{#with photo}}
+        <form action="/catalog/{{_id}}/edit" method="post">
+            <p>
+                <input type="text" name="name" placeholder="Name" value="{{name}}">
+            </p>
+            <p>
+                <input type="text" name="imageUrl" placeholder="Image Url" value="{{imageUrl}}">
+            </p>
+
+            <p>
+                <input type="number" name="age" placeholder="Age" value="{{age}}">
+            </p>
+
+            <p>
+                <textarea type="text" name="description" placeholder="Description">{{description}}</textarea>
+            </p>
+
+            <p>
+                <input type="text" name="location" placeholder="Location" value="{{location}}">
+            </p>
+
+
+            <!-- Add Photo Button -->
+            <button class="edit-btn" type="submit">Edit Photo</button>
+        </form>
+        {{/with}}
+    </div>
+</main>

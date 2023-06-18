@@ -52,10 +52,10 @@ catalogController.get('/:id/details', async (req, res) => {
         })
 
     } else { // Guest
-        hotel.canSeeButtons = false
+        photo.canSeeButtons = false
         res.render('details', {
             title: 'Hotel Details',
-            hotel
+            photo
         })
       }
     
@@ -95,48 +95,50 @@ catalogController.post('/create', async (req, res) => {
 })
 
 catalogController.get('/:id/edit', async (req, res) => {
-    const hotel = await getById(req.params.id) // req.params.id will get the id from the url that got the get request 
+    const photo = await getById(req.params.id) // req.params.id will get the id from the url that got the get request 
 
-    if (hotel.owner != req.user._id) {
+    if (photo.owner != req.user._id) {
         return res.redirect('/auth/login')
     }
 
     res.render('edit', {
         title: 'Edit Hotel',
-        hotel
+        photo
     })
+
 
 })
 
 catalogController.post('/:id/edit', async (req, res) => {
 
     // Load the hotel
-    const hotel = await getById(req.params.id) // req.params.id will get the id from the url that got the get request 
+    const photo = await getById(req.params.id) // req.params.id will get the id from the url that got the get request 
     // Check if the user is authorized 
-    if (hotel.owner != req.user._id) {
+    if (photo.owner != req.user._id) {
         return res.redirect('/auth/login')
     }
 
     // edit the hotel in the DB, our hotel now has the new data
-    const editedHotel = {
+    const editedPhoto = {
         name: req.body.name,
-        city: req.body.city,
+        location: req.body.location,
         imageUrl: req.body.imageUrl,
-        rooms: Number (req.body.rooms),
+        age: Number (req.body.age),
+        description: req.body.description
     }
 
     try {
-        if (Object.values(editedHotel).some(v => !v)) {
+        if (Object.values(editedPhoto).some(v => !v)) {
             throw new Error('All fields are required')
         }
 
-        await update(req.params.id, editedHotel)
+        await update(req.params.id, editedPhoto)
         res.redirect(`/catalog/${req.params.id}/details`)
 
     } catch (err) {
         res.render('edit', {
             title: 'Edit Hotel',
-            hotel: Object.assign(editedHotel, { _id: req.params.id }), // this is because we want to save the last entry so the user won't have to retype the info again
+            photo: Object.assign(editedPhoto, { _id: req.params.id }), // this is because we want to save the last entry so the user won't have to retype the info again
             errors: parseError(err)
         })
     } 
@@ -145,9 +147,9 @@ catalogController.post('/:id/edit', async (req, res) => {
 })
 
 catalogController.get('/:id/delete', async (req, res) => {
-    const hotel = await getById(req.params.id) // req.params.id will get the id from the url that got the get request 
+    const photo = await getById(req.params.id) // req.params.id will get the id from the url that got the get request 
 
-    if (hotel.owner != req.user._id) {
+    if (photo.owner != req.user._id) {
         return res.redirect('/auth/login')
     }
 
@@ -157,12 +159,12 @@ catalogController.get('/:id/delete', async (req, res) => {
 })
 
 catalogController.get('/:id/book', async (req, res) => {
-    const hotel = await getById(req.params.id) // req.params.id will get the id from the url that got the get request 
+    const photo = await getById(req.params.id) // req.params.id will get the id from the url that got the get request 
 
     try {
         // check if the user is owner we redirect them to details and show and error
-        if (hotel.owner == req.user._id) {
-            hotel.thisIsOwner = true
+        if (photo.owner == req.user._id) {
+            photo.thisIsOwner = true
             throw new Error('Cannot book your own hotel')
         }
 
@@ -172,7 +174,7 @@ catalogController.get('/:id/book', async (req, res) => {
     } catch (err) {
         res.render('details', {
             title: 'Hotel Details',
-            hotel,
+            photo,
             errors: parseError(err)
         })        
     }
