@@ -6,7 +6,8 @@
     "nanoid": "3.1.28",
     "react-mde": "11.5.0",
     "react-split": "2.0.13",
-    "showdown": "1.9.1"
+    "showdown": "1.9.1",
+    "firebase": "9.20.0"
   },
   "devDependencies": {
     "vite": "latest",
