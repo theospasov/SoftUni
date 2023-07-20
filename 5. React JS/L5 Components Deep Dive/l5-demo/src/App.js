@@ -1,10 +1,18 @@
 import MovieList from './components/MovieList';
 import React from 'react'
-import {movies as movieData} from './movies'
+// import {movies as movieData} from './movies' - data comes from movies.js version
 
 function App() {
 
-  const [movies, setMovies] = React.useState(()=> movieData)
+  const [movies, setMovies] = React.useState([])
+
+  React.useEffect(() => {
+    fetch(`http://localhost:3000/movies.json`)
+      .then(res => res.json())
+      .then(moviesData => {
+        setMovies(moviesData.movies)
+      })
+  }, [])
 
 
   const movieDeleteHandler = (id) => {

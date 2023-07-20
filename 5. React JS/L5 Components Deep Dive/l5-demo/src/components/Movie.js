@@ -5,7 +5,7 @@ export default function Movie({id,title, year, plot, posterUrl, director, movieD
 
     React.useEffect(() => {
         console.log(`Movie ${title} - mounted`)
-    }, [])
+    }, [title])
 
     React.useEffect(() => {
         console.log(`Movie ${title} - has been updated`)
@@ -15,7 +15,7 @@ export default function Movie({id,title, year, plot, posterUrl, director, movieD
         return () => {
             console.log(`Movie ${title} - has been unmounted`)
         }
-    }, [])
+    }, [title])
 
     return (
         <article className={styles['movie-article']}>
