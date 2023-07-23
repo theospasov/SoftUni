@@ -1,11 +1,26 @@
 import User from "./User";
+import React from 'react'
+import UserDetails from "./UserDetails";
+import * as userService from '../services/userService'
 
-export default function UserList({
-    users
-}) {
+export default function UserList({users}) {
+
+    const [selectUser, setSelectedUser] = React.useState(null)
+
+
+    async function onInfoClick(userId) {
+        const user = await userService.getOne(userId)
+        console.log(user);
+        setSelectedUser(user)
+    }
+
+    const onClose = () => {
+        setSelectedUser(null);
+    };
+  
     return (
         <>
-        
+        {selectUser && <UserDetails {...selectUser} onClose={onClose} />}
         <div className="table-wrapper">
             {/* <div className="loading-shade">
             <div className="spinner"></div>
@@ -122,7 +137,7 @@ export default function UserList({
                     </tr>
                 </thead>
                 <tbody>
-                    {users.map(user => <User key={user._id} {...user} />)}
+                    {users.map(user => <User key={user._id} {...user} onInfoClick={onInfoClick} />)}
                     
                 </tbody>
             </table>
