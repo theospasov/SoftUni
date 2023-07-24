@@ -1,7 +1,7 @@
-export default function Footer() {
-    return(
+export const Footer = () => {
+    return (
         <footer className="footer">
-        <p>Copyright © designed by Mihail Valkov</p>
-      </footer>
-    )
-}
+          <p>Copyright © designed by Mihail Valkov</p>
+        </footer>
+    );
+};
