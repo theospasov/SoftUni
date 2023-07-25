@@ -5,12 +5,16 @@ import * as userService  from '../services/userService';
 import { User } from "./User";
 import { UserDetails } from "./UserDetails";
 import { UserCreate } from '../components/UserCreate'
+import { UserDelete } from './UserDelete';
 
 export const UserList = ({
     users,
-    onUserCreateSubmit
+    onUserCreateSubmit,
+    onUserDelete
 }) => {
     const [selectedUser, setSelectedUser] = useState(null);
+    const [showDeleteUser, setShowDeleteUser] = useState(false)
+    const [showEditUser, setShowEditUser] = useState(null)
     const [ newUserClicked, setNewUserClicked ] = useState(false)
 
     const onInfoClick = async (userId) => {
@@ -21,6 +25,8 @@ export const UserList = ({
 
     const onClose = () => {
         setSelectedUser(null);
+        setShowDeleteUser(false)
+        setShowDeleteUser(null)
     };
 
     const onNewUserClick = () => {
@@ -32,14 +38,22 @@ export const UserList = ({
         setNewUserClicked(false)
     }
 
-    const onDeleteClick = (id) => {
-        userService.deleteUser(id)
+    const onDeleteClick = (userId) => {
+        setShowDeleteUser(userId)
     }
+
+    const onDeleteHandler = () => {
+        onUserDelete(showDeleteUser)
+        onClose()
+    }
+
+
 
     return (
         <>
          {newUserClicked && <UserCreate onNewUserClick={onNewUserClick} onUserCreateSubmit={onUserCreateSubmitHandler} />}
             {selectedUser && <UserDetails {...selectedUser} onClose={onClose} />}
+            {showDeleteUser && <UserDelete onClose={onClose} onDelete={onDeleteHandler}/>}
             <div className="table-wrapper">
                 {/* <div className="loading-shade">
                 <div className="spinner"></div>

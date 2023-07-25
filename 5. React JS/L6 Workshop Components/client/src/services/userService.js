@@ -37,9 +37,9 @@ export const deleteUser = async (userId) => {
     const req = await fetch(`${baseUrl}/${userId}`, {
         method: 'DELETE'
     })
-    const result = await req.json()
-    console.log(result);
-    
+    const res = await req.json()
+   // console.log(res);
+    return res
 }
 /* 
 Delete an existing user by sending a DELETE request to /users/{userId}. The service will respond with an object, containing userId of the deleted user.

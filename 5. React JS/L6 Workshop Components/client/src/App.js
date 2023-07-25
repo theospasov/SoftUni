@@ -35,6 +35,16 @@ function App() {
         setUsers( prevState => [...prevState, createdUser])
 
         // Close form page
+
+        
+    }
+
+    const onUserDelete = async (userId) => {
+        // Delete from Server
+        await userService.deleteUser(userId)
+
+        // Delete from State
+        setUsers(prevState => prevState.filter(user => user._id !== userId))
     }
 
     return (
@@ -45,7 +55,11 @@ function App() {
                 <section className="card users-container">
                     <Search />
 
-                    <UserList users={users} onUserCreateSubmit={onUserCreateSubmit} />
+                    <UserList 
+                        users={users} 
+                        onUserCreateSubmit={onUserCreateSubmit} 
+                        onUserDelete={onUserDelete}
+                    />
 
                     
                 </section>
