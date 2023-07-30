@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 
 export const CharacterPage = () => {
@@ -15,11 +15,19 @@ export const CharacterPage = () => {
             })
     }, [characterId])
 
+    const navigate = useNavigate()// we create a function that is equal to use navigate and call that function when we want to redirect
+
+    function onBackButtonClick() {
+        navigate('/characters') // go to a specific path
+       // navigate() // return to the previous page
+    }
+
     return (
         <>
             <h1>Character Info</h1>
             <h2>{characterInfo.name}</h2>
             <h2>{characterInfo.birth_year}</h2>
+            <button onClick={onBackButtonClick}>Back</button>
         </>
 
     )
