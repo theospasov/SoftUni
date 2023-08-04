@@ -1,19 +1,42 @@
 import { useParams } from "react-router-dom" 
-import * as gameService from '../../services/gameService'
 import { useEffect, useState } from "react"
+
+import * as gameService from '../../services/gameService'
+import * as commentService from '../../services/commnetService'
 
 export function GameDetails() {
     const {gameId} = useParams()
 
     const [game, setGame] = useState({})
+    const [username, setUsername] = useState('')
+    const [comment, setComment] = useState('')
+    const [comments, setComments] = useState([])
 
 
     useEffect(() => {
         gameService.getOne(gameId)
         .then(res => {
+          commentService.getAll(gameId)
             setGame(res)
+            return commentService.getAll(gameId)
+        })
+        .then(result => {
+          setComments(result)
         })
     }, [gameId])
+
+    const onCommentSubmit = async (e) => {
+      e.preventDefault()
+      await commentService.crate({
+        gameId,
+        username,
+        comment
+      })
+      setUsername('')
+      setComment('')
+    }
+
+  
 
     return (
         <section id="game-details">
@@ -57,16 +80,17 @@ export function GameDetails() {
         {/* Add Comment ( Only for logged-in users, which is not creators of the current game ) */}
         <article className="create-comment">
           <label>Add new comment:</label>
-          <form className="form">
+          <form className="form" onSubmit={onCommentSubmit}>
+            <input type="text" name="username" placeholder="user1123" value={username} onChange={(e) => setUsername(e.target.value)}/>
             <textarea
               name="comment"
               placeholder="Comment......"
-              defaultValue={""}
+              value={comment} onChange={(e) => setComment(e.target.value)}
             />
             <input
               className="btn submit"
               type="submit"
-              defaultValue="Add Comment"
+              value="Add Comment"
             />
           </form>
         </article>
