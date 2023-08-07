@@ -1,33 +1,31 @@
+import { useState } from 'react';
+
+import { useForm } from '../hooks/useForm';
+
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form'
-import { useState } from 'react';
 
-export function AddTodoModal() {
+export function AddTodoModal({
+    onTodoAddSubmit,
+    show,
+    onTodoAddClose
+}) {
 
-    const [formValues, setFormValues] = useState({
+    const { formValues, onChangeHandler, onSubmit} = useForm({
         text: ''
-    })
+    },  onTodoAddSubmit)
 
-    const onTodoAddSubmit = (e) => {
-        e.preventDefault()
-
-        console.log(formValues);
-    }
-
-    const onChangeHandler = (e) => {
-        setFormValues(prevState => ({...prevState, [e.target.name]: e.target.value}) )
-    }
 
     return (
 
-        <Modal show={true}>
+        <Modal show={show}>
             <Modal.Header closeButton>
                 <Modal.Title>Add Todo</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
-                <Form onSubmit={onTodoAddSubmit}>
+                <Form onSubmit={onSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Todo</Form.Label>
                         <Form.Control 
@@ -39,7 +37,7 @@ export function AddTodoModal() {
                     </Form.Group>
 
                     <Button variant="primary" type="submit" style={{marginRight: '10px'}}>Submit</Button>
-                    <Button variant="secondary">Close</Button>
+                    <Button variant="secondary" onClick={onTodoAddClose}>Close</Button>
 
                 </Form>
             </Modal.Body>
