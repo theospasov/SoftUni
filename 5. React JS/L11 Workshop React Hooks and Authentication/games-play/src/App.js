@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import * as gameService from './services/gameService';
 import { AuthContext } from './contexts/AuthContext'
+import * as authService from './services/authService'
 
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer/Footer";
@@ -36,10 +37,19 @@ function App() {
     };
 
     // Authentication
-    const onLoginSubmit = async (e) => {
-        e.preventDefault()
-        console.log(Object.fromEntries(new FormData(e.target)));
-  
+    const onLoginSubmit = async (data) => {
+
+        try {
+            const result = await authService.login(data)
+
+            // we add the authentication data to the state 
+            setAuth(result)
+            console.log(result);
+        } catch (error) {
+            console.log(`There is a problem ` + error);
+        }
+
+
     }
 
     return (
