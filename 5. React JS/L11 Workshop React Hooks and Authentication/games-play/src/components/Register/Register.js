@@ -1,4 +1,13 @@
+import { useContext } from "react";
+
+import { useForm } from "../../hooks/useForm";
+import { AuthContext } from "../../contexts/AuthContext";
+
 export const Register = () => {
+    const { onRegisterSubmit } = useContext(AuthContext)
+    const {formValues, changeFormHandler, onSubmit} = useForm({
+
+    }, onRegisterSubmit)
     return (
         <section id="register-page" className="content auth">
             <form id="register">

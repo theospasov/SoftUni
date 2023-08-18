@@ -7,6 +7,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
         setFormValues(prevState => ({...prevState, [e.target.name]: e.target.value}))
     }
 
+    // explained L11 - 1:26:35
     const onSubmit = (e) => {
         e.preventDefault()
 

@@ -23,7 +23,7 @@ function App() {
     useEffect(() => {
         gameService.getAll()
             .then(result => {
-                console.log(result);
+                //console.log(result);
                 setGames(result)
             })
     }, []);
@@ -37,23 +37,46 @@ function App() {
     };
 
     // Authentication
-    const onLoginSubmit = async (data) => {
+        const onLoginSubmit = async (data) => {
+            try {
+                const result = await authService.login(data)
 
-        try {
-            const result = await authService.login(data)
+                // we add the authentication data to the state 
+                setAuth(result)
+                //console.log(result);
 
-            // we add the authentication data to the state 
-            setAuth(result)
-            console.log(result);
-        } catch (error) {
-            console.log(`There is a problem ` + error);
+                navigate('/catalog')
+            } catch (error) {
+                console.log(`There is a problem ` + error);
+            }
         }
 
+        const context = {
+            onLoginSubmit,
+            onRegisterSubmit,
+            userId: auth._id,
+            token: auth.accessToken,
+            userEmail: auth.email,
+            isAuthenticated: !!auth.accessToken
+        }
 
-    }
+        const onRegisterSubmit = async (data) => {
+            try {
+                const result = await authService.register(data)
+
+                // we add the authentication data to the state 
+                setAuth(result)
+
+                navigate('/catalog')
+            } catch (error) {
+                console.log(`There is a problem ` + error);
+            }
+        }
+
+    // /Authentication
 
     return (
-        <AuthContext.Provider value={{onLoginSubmit}}>
+        <AuthContext.Provider value={context}> 
 
         <div id="box">
             <Header />
