@@ -13,6 +13,7 @@ import { Register } from "./components/Register/Register";
 import { CreateGame } from "./components/CreateGame/CreateGame";
 import { Catalog } from "./components/Catalog/Catalog";
 import { GameDetails } from './components/GameDetails/GameDetails';
+import { Logout } from './components/Logout/Logout';
 
 function App() {
     const navigate = useNavigate();
@@ -51,18 +52,14 @@ function App() {
             }
         }
 
-        const context = {
-            onLoginSubmit,
-            onRegisterSubmit,
-            userId: auth._id,
-            token: auth.accessToken,
-            userEmail: auth.email,
-            isAuthenticated: !!auth.accessToken
-        }
-
         const onRegisterSubmit = async (data) => {
+            const {confirmPassword, ...registerData} = data
+            if (confirmPassword !== registerData.password) {
+                return
+            }
+
             try {
-                const result = await authService.register(data)
+                const result = await authService.register(registerData)
 
                 // we add the authentication data to the state 
                 setAuth(result)
@@ -73,10 +70,26 @@ function App() {
             }
         }
 
+        const onLogout = async () => {
+            //TODO: authorized request
+            //await authService.logout()
+            setAuth({})
+        }
+
+        const contextValues = {
+            onLoginSubmit,
+            onRegisterSubmit,
+            onLogout,
+            userId: auth._id,
+            token: auth.accessToken,
+            userEmail: auth.email,
+            isAuthenticated: !!auth.accessToken
+        }
+
     // /Authentication
 
     return (
-        <AuthContext.Provider value={context}> 
+        <AuthContext.Provider value={contextValues}> 
 
         <div id="box">
             <Header />
@@ -85,6 +98,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/login' element={<Login onLoginSubmit={onLoginSubmit} />} />
+                    <Route path='/logout' element={<Logout/>} />
                     <Route path='/register' element={<Register />} />
                     <Route path='/create-game' element={<CreateGame onCreateGameSubmit={onCreateGameSubmit} />} />
                     <Route path='/catalog' element={<Catalog games={games} />} />
