@@ -1,6 +1,10 @@
+/* useForm is a custom hook we create to handle Forms. 
+We have form in Login, Register, Edit and Create. Instead of repeating code multiple time, we create an abstraction - a Hook, that controls the form values, puts them in state (formValues), listens for changes (changeForHandler) and has a on submit handler.
+
+*/
+
 import { useState } from "react";
 
-// We have form in Login, Register, Edit and Create. Instead of repeating code multiple time, we create an abstraction - a Hook, that controls the form values, puts them in state (formValues), listens for changes (changeForHandler) and has a on submit handler.
 export const useForm = (initialValues, onSubmitHandler) => {
     const [formValues, setFormValues] = useState(initialValues)
 
