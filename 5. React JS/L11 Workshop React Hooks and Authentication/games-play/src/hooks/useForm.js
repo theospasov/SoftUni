@@ -3,10 +3,14 @@ We have form in Login, Register, Edit and Create. Instead of repeating code mult
 
 */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const useForm = (initialValues, onSubmitHandler) => {
     const [formValues, setFormValues] = useState(initialValues)
+
+    useEffect(() => {
+
+    },[formValues] )
 
     const changeFormHandler = (e) => {
         setFormValues(prevState => ({...prevState, [e.target.name]: e.target.value}))
@@ -19,9 +23,16 @@ export const useForm = (initialValues, onSubmitHandler) => {
         onSubmitHandler(formValues)
     }
 
+    const changeValues = (newValues) => {
+        // TODO: validate newValues shape (like initialValues)
+
+        setFormValues(newValues)
+    }
+
     return {
         formValues,
         changeFormHandler,
-        onSubmit
+        onSubmit,
+        changeValues
     }
 }
