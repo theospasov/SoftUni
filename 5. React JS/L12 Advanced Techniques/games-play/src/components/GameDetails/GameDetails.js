@@ -2,37 +2,44 @@ import { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 
 import { gameServiceFactory } from '../../services/gameService';
+import * as commentService from '../../services/commentService'
 import { useService } from '../../hooks/useService';
-import { AuthContext } from '../../contexts/AuthContext';
+import {  useAuthContext } from '../../contexts/AuthContext';
+import { useForm } from '../../hooks/useForm';
+
+import { AddComment } from './AddComment/AddComment';
 
 export const GameDetails = () => {
-    const [username, setUsername] = useState('');
-    const [comment, setComment] = useState('');
+
     const { gameId } = useParams();
     const [game, setGame] = useState({});
     const gameService = useService(gameServiceFactory)
-    const { userId } = useContext(AuthContext)
+    const { userId, isAuthenticated } = useAuthContext()
+    const {} = useForm({
+        comment: ''
+    }, )
     const navigate = useNavigate()
 
     useEffect(() => {
-        gameService.getOne(gameId)
-            .then(result => {
-                setGame(result);
+        Promise.all([
+            gameService.getOne(gameId),
+            commentService.getAll(gameId)
+        ])
+            .then(values => {
+                console.log(values);
             })
+        // gameService.getOne(gameId)
+        //     .then(result => {
+        //         setGame(result);
+        //     })
     }, [gameId]);
 
-    const onCommentSubmit = async (e) => {
-        e.preventDefault();
+    const onCommentSubmit = async (values) => {
 
-        const result = await gameService.addComment(gameId, {
-            username,
-            comment,
-        });
+       const response = await  commentService.create(gameId, values.comment)
+        console.log(response);
 
-        setGame(state => ({...state, comments: {...state.comments, [result._id]: result}}));
-        setUsername('');
-        setComment('');
-    };
+     };
 
     const isOwner =  game._ownerId === userId
 
@@ -80,17 +87,7 @@ export const GameDetails = () => {
                     
                 )}
             </div>
-
-            {/* <!-- Bonus --> */}
-            {/* <!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) --> */}
-            <article className="create-comment">
-                <label>Add new comment:</label>
-                <form className="form" onSubmit={onCommentSubmit}>
-                    <input type="text" name="username" placeholder='Пешо' value={username} onChange={(e) => setUsername(e.target.value)} />
-                    <textarea name="comment" placeholder="Comment......" value={comment} onChange={(e) => setComment(e.target.value)}></textarea>
-                    <input className="btn submit" type="submit" value="Add Comment" />
-                </form>
-            </article>
+                {isAuthenticated &&  <AddComment onCommentSubmit={onCommentSubmit}/> }
 
         </section>
     );

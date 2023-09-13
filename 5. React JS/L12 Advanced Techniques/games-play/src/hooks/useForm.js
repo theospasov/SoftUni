@@ -19,7 +19,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
     // explained L11 - 1:26:35
     const onSubmit = (e) => {
         e.preventDefault()
-
+        setFormValues(initialValues)
         onSubmitHandler(formValues)
     }
 

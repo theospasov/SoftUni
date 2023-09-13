@@ -55,6 +55,7 @@ function App() {
         setGames(prevState => prevState.map(x => x._id == values._id ? result : x))
     }
 
+    // Example of using HOC - we take the Login, enhance it (currently the enhancer doesn't do anything) and we return a new component "EnhancedLogin"
     const EnhancedLogin = withAuth(Login)
 
     return (
@@ -66,7 +67,7 @@ function App() {
             <main id="main-content">
                 <Routes>
                     <Route path='/' element={<Home />} />
-                    <Route path='/login' element={<Login />} />
+                    <Route path='/login' element={<EnhancedLogin />} />
                     <Route path='/logout' element={<Logout/>} />
                     <Route path='/register' element={<Register />} />
                     <Route path='/create-game' element={<CreateGame onCreateGameSubmit={onCreateGameSubmit} />} />

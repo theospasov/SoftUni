@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useForm } from "../../hooks/useForm";
 
-export const Login = () => {
+export const Login = ({auth}) => {
 
-    const { onLoginSubmit } = useAuthContext()
+    
+   // const { onLoginSubmit } = useAuthContext() // we created a HOC and added the auth to the props, so we don't need to take it from  useAuthContext()
+
+   const { onLoginSubmit} = auth
+   
     const {formValues, changeFormHandler, onSubmit} = useForm({
         email: '',
         password: ''
