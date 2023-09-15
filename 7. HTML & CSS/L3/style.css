@@ -1,0 +1,27 @@
+
+body {
+    background: aliceblue;
+    color: gray;
+}
+
+p {
+    color: black;
+}
+
+a {
+    color: green;
+}
+
+a[href^="http"] {
+    color: blueviolet;
+}
+
+.box {
+    color: darkslateblue;
+    background: peachpuff;
+}
+
+#header-one {
+    text-decoration: underline;
+    font-size: 50px;
+}
