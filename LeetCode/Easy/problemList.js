@@ -4,6 +4,6 @@ let strStr = function(haystack, needle) {
     if (match >= 0) {
         return match
     } else {
-        return -1
+        return -1;
     }
 };
