@@ -1,0 +1,22 @@
+body {
+    background: #e4e978;
+    margin: 0;
+    padding: 0;
+
+}
+
+section, article {
+    margin: 10px;
+}
+
+article {
+    padding: 5px 15px;
+    background-color: #f2f4c0;
+    
+}
+
+
+
+section article {
+    color: #4c7658;
+}
