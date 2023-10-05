@@ -1,0 +1,26 @@
+body {
+    font: 16px/1.5, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+table thead {
+    font-weight: 700;
+    background-color: #DDD;
+
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #eee;
+}

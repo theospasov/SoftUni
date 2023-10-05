@@ -1,0 +1,29 @@
+body {
+    font-size: 18px;
+    font-family: arial, serif;
+    line-height: 3;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5.4px;
+    padding: 12.6px 27px;
+}
+
+a:hover {
+    color: #eee;
+
+}
+
+i {
+    padding-right: 5.4px;
+}
+
+a.green {
+    background-color: green;
+}
+
+a.orange {
+    background-color: orange;
+}
