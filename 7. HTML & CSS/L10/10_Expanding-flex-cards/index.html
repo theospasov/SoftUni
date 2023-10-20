@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanding Flex Cards</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(238, 238, 238);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0 auto;
+            
+        }
+
+        .container ul {
+            display: flex;
+            gap: 1em;
+        }
+
+        li {
+            display: block;
+            width: 10em;
+            height: 25em;
+            overflow: hidden;
+            transition: width 0.3s ease-in-out;
+        }
+
+        li:hover {
+            width: 30em;
+            
+        }
+
+        img {
+            display: block;
+            width: auto;
+            height: 100%;
+            border-radius: 5px;
+            box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.2);
+            
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <ul>
+            <li><img src="images/Image1.jpg" alt=""></li>
+            <li><img src="images/Image2.jpg" alt=""></li>
+            <li><img src="images/Image3.jpg" alt=""></li>
+            <li><img src="images/Image4.jpg" alt=""></li>
+        </ul>
+    </section>
+</body>
+</html>

@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 20px  Helvetica, sans-serif;
+    padding: 2em;
+}
+
+.container {
+    display: flex;
+    /* justify-content: flex-start; */
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 15vw;
+    height: 35rem;
+    gap: 0.5em;
+}
+
+.container span {
+    border: 1px solid black;
+    padding: 0.8em;
+    text-align: center;
+
+}
+
+.H {
+    order: 1;
+}
+
+.T {
+    order: 2;
+}
+
+.M {
+    order: 3;
+}
+
+.L {
+    order: 4;
+}

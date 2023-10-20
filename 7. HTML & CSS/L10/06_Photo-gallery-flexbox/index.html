@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery - Flexbox</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            padding: 5em;
+            background-color: #ddd;
+            max-width: 60em; /* we will have 3 images per row or less, but not more */
+            margin: 0 auto;
+        }
+
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 3em;
+        }
+
+        li {
+            display: flex;
+            flex: 1 1 200px; /* allow shrink and grow, keeping a maximum of 200px width per image  */
+            border: 10px solid black;
+            box-shadow: 0 0 10px  black ;
+            align-items: center;
+            padding: 2em 1em;
+            background-color: white;
+        }
+
+        img {
+            display: block;
+            width: 100%; /* make the images as big as they are, but will be limited to 200px from li {flex: 1 1 200px} */
+            height: auto;
+        }
+
+
+    </style>
+</head>
+<body>
+    <section class="gallery">
+        <ul>
+            <li><img src="images/picture1.jpg"></li>
+            <li><img src="images/picture2.jpg"></li>
+            <li><img src="images/picture3.jpg"></li>
+            <li><img src="images/picture4.jpg"></li>
+            <li><img src="images/picture5.jpg"></li>
+            <li><img src="images/picture6.jpg"></li>
+            <li><img src="images/picture7.jpg"></li>
+            <li><img src="images/picture8.jpg"></li>
+            <li><img src="images/picture9.jpg"></li>
+        </ul>
+    </section>
+</body>
+</html>

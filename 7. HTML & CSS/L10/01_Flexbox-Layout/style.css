@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eee;
+    padding: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+header, main, aside, footer {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 0.4rem;
+    color: #000;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+}
+
+header {
+    min-height: 200px;
+}
+
+footer {
+    min-height: 100px;
+}
+
+header, footer {
+    flex-basis: 100%;
+}
+
+main {
+    flex-grow: 4;
+    /* flex-shrink: 1; */
+    flex-basis: 40rem;
+    min-height: 200px;
+}
+
+aside {
+    flex-grow: 2;
+    /* flex-shrink: 1; */
+    flex-basis: 20rem;
+}
