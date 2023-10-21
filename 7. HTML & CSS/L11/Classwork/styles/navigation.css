@@ -1,0 +1,70 @@
+.main-nav {
+   display: none;  /* Hide menu items from mobile*/   
+}
+
+.main-nav ul {
+    padding: 0;
+}
+
+.main-nav li {
+    display: block;
+}
+
+.main-nav a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 0.5em 1em;
+}
+
+/* form - toggle that changes the nav color */
+
+    /* hide checkbox*/
+    #nav-toggle {
+        appearance: none;
+        pointer-events: none;
+    }
+
+/* */
+
+
+/* Nav items from desktop  */
+    @media (min-width: 600px) {
+
+        .site-header label {
+            display: none; /* Hide Menu label */
+        }
+        .main-nav {
+            display: block; /* Hidden in .main-nav {display: none; }*/
+        }
+        .main-nav ul {
+            display: flex;
+        }
+    }
+/* */
+
+
+/* Nav items TRIGGER from mobile  */
+    @media (max-width: 600px) {
+        #nav-toggle:checked + .site .site-header .main-nav {
+            display: block;
+            position: absolute; /* dependency: layout.css -> .site-header { position: relative; } */
+            top: 5em;
+            right: 0.5em;
+            background-color: #3498db;
+            z-index: 2000;
+            box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.4) ;
+            border-radius: 0.3em;
+        }
+
+
+
+        .site-header label span {
+            display: none;
+        }
+
+        #nav-toggle:checked + .site .site-header label span {
+            display: inline;
+        }
+    }
+/* */

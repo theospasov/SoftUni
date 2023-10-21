@@ -1,0 +1,106 @@
+html {
+    font: 12px/1.4 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (min-width:600px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (min-width:900px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width:1200px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+body, table, input, button { /* some elements do NOT follow the global html rules for font; we can force them to inherit the global rules*/
+    font: inherit
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1em;
+    margin-bottom: 0.5em;  /* for h1  font-size: 3em -> 16*3*0.5 = 24px ; h2 font-size: 2.4em -> 16*2.4*0.5 = 19.2px*/
+    margin-top: 1em;
+    font-weight: normal;
+
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.4em;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+h4 {
+    font-size: 1.4em;
+}
+
+h5 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+p, * + ul, * + ol {
+    padding-bottom: 1.5em;
+}
+
+ul, ol, blockquote {
+    padding-left: 1.5em;
+}
+
+ul, ol {
+    list-style-position: inside;
+}
+
+blockquote {
+    border-left: 4px solid #ccc;
+    margin: 1.5em;
+    font-style: italic;
+    color: #666;
+
+}
+
+blockquote p:first-child:before {
+    display: inline-block;
+    content: '"';
+}
+
+blockquote p:not(.author):after {
+    display: inline-block;
+    content: '"';
+}
+
+blockquote p.author {
+    text-align: right;
+    color: black;
+}
+
+blockquote p.author:before {
+    display: inline-block;
+    content: '—';
+    padding-right: 1em;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
