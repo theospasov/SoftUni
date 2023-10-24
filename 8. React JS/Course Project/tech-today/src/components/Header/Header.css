@@ -1,0 +1,12 @@
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgb(249, 230, 16);
+    border-radius: 10px;
+}
+
+.header-button {
+    background-color: yellow;
+}
