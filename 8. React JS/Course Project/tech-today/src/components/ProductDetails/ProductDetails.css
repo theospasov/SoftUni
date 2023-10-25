@@ -1,0 +1,32 @@
+.product-details {
+    padding: 1em;
+    margin: 0 auto;
+    max-width: 80%;
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.details-image {
+    flex: 1 1 55%;
+    border-radius: 1em;
+}
+
+.details-details {
+    flex: 1 1 40%;
+
+}
+
+.details-details img {
+    width: 10%;
+
+} 
+
+.details-brand {
+    display: flex;
+}
+
+button {
+    padding: 0.8em;
+    background-color: rgb(249, 230, 16);
+}

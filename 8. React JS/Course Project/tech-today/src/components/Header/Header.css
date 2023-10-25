@@ -1,12 +1,31 @@
 .site-header {
     display: flex;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     background-color: rgb(249, 230, 16);
     border-radius: 10px;
+    padding: 0.8em;
 }
 
 .header-button {
     background-color: yellow;
+}
+
+.header-logo {
+    max-width: 10em;
+}
+
+.header-nav {
+    display: flex;
+}
+
+.nav {
+    padding: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
 }

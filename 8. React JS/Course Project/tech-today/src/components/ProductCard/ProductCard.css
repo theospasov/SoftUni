@@ -1,0 +1,18 @@
+.product-card {
+    max-width: 16em;
+    background-color: #fff;
+    border-radius: 0.8em;
+    border: 1px solid black;
+    padding: 0.8em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.card-image {
+    max-width: 15em;
+    border-radius: 0.8em;
+    /* margin: 0 auto; */
+}
