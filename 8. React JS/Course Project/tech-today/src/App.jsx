@@ -1,6 +1,6 @@
 import { Routes ,Route } from 'react-router-dom'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -13,6 +13,20 @@ import { ProductDetails } from './components/ProductDetails/ProductDetails'
 import { ProductAdd } from './components/ProductAdd/ProductAdd'
 
 function App() {
+
+  const [products, setProducts] = useState([])
+
+    useEffect(() => {
+      async function getProducts() {
+        const res = await fetch('http://localhost:3030/data/products')
+        const data = await res.json()
+        setProducts(prevState => data)
+      }
+      getProducts()
+   
+
+    }, [])
+
     return (
         <>
             <div className='site'>
@@ -20,7 +34,7 @@ function App() {
 
                 <main className='site-main'>
                     <Routes>
-                        <Route path='/' element={<Home/>}/>
+                        <Route path='/' element={<Home products={products}/>}/>
                         <Route path='/login' element={<Login/>}/>
                         <Route path='register' element={<Register/>}></Route>
                         <Route path='/product/details' element={<ProductDetails/>}></Route>
