@@ -9,7 +9,9 @@ export const Header = () => {
     return (
         <>  
             <header className='site-header'>
-                <Link to={'/'}><img src={Logo} className='header-logo'/></Link>
+                <div className='logo-container'>
+                    <Link to={'/'}><img src={Logo} className='header-logo'/></Link>
+                </div>
                 {/* <button className='header-button'>Hello</button> */}
                 <ul className='header-nav'>
                     <li><Link className='nav-home nav' to='/'>Home</Link></li>

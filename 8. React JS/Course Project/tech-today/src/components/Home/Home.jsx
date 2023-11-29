@@ -7,7 +7,7 @@ export const Home = ({products}) => {
 
     return (
         <>
-            <h1>Hello world</h1>
+            <h1>All products</h1>
             <div className='product-grid'>
                 {products.map((product) => (
                     <ProductCard {...product} key={product._id} />

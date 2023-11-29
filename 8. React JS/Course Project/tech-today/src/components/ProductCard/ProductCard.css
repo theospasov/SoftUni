@@ -13,6 +13,9 @@
 
 .card-image {
     max-width: 15em;
+    height: auto;
+    aspect-ratio: 3/2;
+    object-fit: cover;
     border-radius: 0.8em;
     /* margin: 0 auto; */
 }
