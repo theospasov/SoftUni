@@ -1,4 +1,11 @@
 .product-grid {
+    max-width: 1500px;
     display: flex;
     gap: 1em;
+    margin: 0 auto;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
 }

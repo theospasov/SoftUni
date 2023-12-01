@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 
-export const Register = () => {
+export default function Register() {
     return (
         <div className="page-register">
         <form className="login-form" method="POST" action="#">

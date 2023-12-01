@@ -1416,7 +1416,15 @@
                 "brand": "GoPro",
                 "description": "The best HERO camera we’ve ever made — HERO12 Black takes GoPro’s best-in-class image quality to the next level with new HDR (High Dynamic Range) 5.3K and 4K video, upgraded HyperSmooth 6.0 video stabilization and an industry-leading 177° field-of-view",
                 "_id": "daf55cd4-9aa1-4b7a-82a9-fbdb74aaa84b"
-            }
+            },
+            "3564027f-adcd-4425-b2c0-12d3d2386c0z": {
+                "name": "Aq Bot V3",
+                "price": "1500",
+                "imageUrl": "https://assets1.ignimgs.com/2020/01/29/ZoomerKitty1580313078030.jpg",
+                "brand": "Pena",
+                "description": "Black and white plastic cat",
+                "_id": "3564027f-adcd-4425-b2c0-12d3d2386c0z"
+            },
         },
     	comments: {
     		"0a272c58-b7ea-4e09-a000-7ec988248f66": {

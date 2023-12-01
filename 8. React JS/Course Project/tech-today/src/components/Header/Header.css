@@ -7,14 +7,20 @@
     background-color: rgb(249, 230, 16);
     border-radius: 10px;
     padding: 0.8em;
+   
 }
 
 .header-button {
     background-color: yellow;
 }
 
-.header-logo {
-    max-width: 10em;
+.header-logo-icon {
+    max-width: 7em;
+    padding: 0 0 0 2em;
+}
+
+.header-logo-text {
+    max-width: 20em;
     padding: 0 0 0 2em;
 }
 

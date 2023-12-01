@@ -1,31 +1,19 @@
-import { Routes ,Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+
+import * as productService from './services/productService.js'
 import { Header } from './components/Header/Header.jsx'
 import { Footer } from './components/Footer/Footer'
-import { Home } from './components/Home/Home'
-import { Login } from './components/Login/Login'
-import { Register } from './components/Register/Register'
-import { ProductDetails } from './components/ProductDetails/ProductDetails'
-import { ProductAdd } from './components/ProductAdd/ProductAdd'
+import Home from './components/Home/Home'
+import Login from './components/Login/Login'
+import Register from './components/Register/Register'
+import ProductDetails from './components/Product/ProductDetails/ProductDetails.jsx'
+import ProductAdd from './components/Product/ProductAdd/ProductAdd.jsx'
 
 function App() {
-
-  const [products, setProducts] = useState([])
-
-    useEffect(() => {
-      async function getProducts() {
-        const res = await fetch('http://localhost:3030/data/products')
-        const data = await res.json()
-        setProducts(prevState => data)
-      }
-      getProducts()
-   
-
-    }, [])
 
     return (
         <>
@@ -34,11 +22,11 @@ function App() {
 
                 <main className='site-main'>
                     <Routes>
-                        <Route path='/' element={<Home products={products}/>}/>
+                        <Route path='/' element={<Home />}/>
                         <Route path='/login' element={<Login/>}/>
-                        <Route path='register' element={<Register/>}></Route>
-                        <Route path='/product/details' element={<ProductDetails/>}></Route>
-                        <Route path='/product/add' element={<ProductAdd/>}></Route>
+                        <Route path='/register' element={<Register/>}/>
+                        <Route path='/products/:productId' element={<ProductDetails/>}/>
+                        <Route path='/product/add' element={<ProductAdd/>}/>
                     </Routes>
    
                 </main>

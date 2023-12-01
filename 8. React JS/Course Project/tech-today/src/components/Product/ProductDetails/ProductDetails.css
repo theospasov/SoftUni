@@ -10,6 +10,7 @@
 .details-image {
     flex: 1 1 55%;
     border-radius: 1em;
+    max-width: 1000px;
 }
 
 .details-details {
