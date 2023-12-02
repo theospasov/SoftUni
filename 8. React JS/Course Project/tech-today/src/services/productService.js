@@ -10,7 +10,7 @@ export async function getAll() {
 
 export async function getOne(productId) {
     const result = await request.get(`${baseUrl}/${productId}`)
-    console.log(result);
+    
     return result
 }
 
