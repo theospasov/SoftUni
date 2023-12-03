@@ -35,7 +35,7 @@ export default function ProductDetails() {
         setCounter(prevState => prevState + 1)
     }    
     return (
-        <>
+        <div className='product-page'>
             <article className="product-details">
                 <img className="details-image" src={product.imageUrl} />
                 <div className='details-details'>
@@ -73,7 +73,7 @@ export default function ProductDetails() {
                     )}
                 </div>
             </div>
-        </>
+        </div>
 
     )
 }

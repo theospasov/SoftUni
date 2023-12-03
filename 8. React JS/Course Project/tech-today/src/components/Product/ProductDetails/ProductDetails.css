@@ -1,3 +1,9 @@
+.product-page {
+
+    max-width: 80%;
+    margin: 0 auto;
+}
+
 .product-details {
     padding: 1em;
     margin: 0 auto;
@@ -5,12 +11,22 @@
     display: flex;
     align-items: flex-start;
     gap: 1em;
+    background-color: white;
+    border-radius: 0.5em;
+   
+}
+
+.product-comments {
+    background-color: white;
+    margin: 2em auto;
+    max-width: 80%;
+    border-radius: 0.5em;
 }
 
 .details-image {
     flex: 1 1 55%;
     border-radius: 1em;
-    max-width: 1000px;
+    max-width: 700px;
 }
 
 .details-details {
