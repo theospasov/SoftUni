@@ -30,6 +30,14 @@
     
 }
 
+.user {
+    display: flex;
+    gap: 1em;
+}
+
+.guest {
+    display: flex;
+}
 .nav {
     padding: 1em;
     text-decoration: none;
