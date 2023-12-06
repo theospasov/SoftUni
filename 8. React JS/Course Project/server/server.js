@@ -1394,6 +1394,7 @@
     	},
         products : {
             "3564027f-adcd-4425-b2c0-1253d2386c0c": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 "name": "Macbook Pro (14-inch M3)",
                 "price": "999",
                 "imageUrl": "https://images.hothardware.com/contentimages/article/3292/content/small_angle-2-apple-macbook-pro-14-m2-pro-2023.jpg",
@@ -1410,6 +1411,7 @@
                 "_id": "c64db398-91cd-487c-b900-86058c0422f8"
             },
             "daf55cd4-9aa1-4b7a-82a9-fbdb74aaa84b": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 "name": "Hero12 Black",
                 "price": "389",
                 "imageUrl": "https://static.gopro.com/assets/blta2b8522e5372af40/bltedfd68d0af398b91/64dcba785572440841e234ba/01-pdp-h12b-gallery-1920.jpg?width=1536&quality=80&auto=webp&disable=upscale",
@@ -1418,6 +1420,7 @@
                 "_id": "daf55cd4-9aa1-4b7a-82a9-fbdb74aaa84b"
             },
             "3564027f-adcd-4425-b2c0-12d3d2386c0z": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 "name": "Aq Bot V3",
                 "price": "1500",
                 "imageUrl": "https://assets1.ignimgs.com/2020/01/29/ZoomerKitty1580313078030.jpg",

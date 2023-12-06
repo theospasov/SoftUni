@@ -2,6 +2,8 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import useForm from '../../hooks/useForm'
 
+import './Register.css'
+
 import AuthContext from '../../contexts/authContext'
 
 
@@ -10,7 +12,8 @@ export default function Register() {
     const {values, onChange, onSubmit} = useForm(registerSubmitHandler, {
         email: '',
         password: '',
-        repass: ''
+        repass: '',
+        username: ''
     })
 
 
@@ -27,6 +30,17 @@ export default function Register() {
                 placeholder="example@web.com"
                 onChange={onChange}
                 values={values.email}
+
+            />
+            <label htmlFor="username">Username</label>
+            <input 
+                className="form-username"
+                type="text"
+                name='username'
+                id='username'
+                placeholder="user1"
+                onChange={onChange}
+                values={values.username}
 
             />
             <label htmlFor="password">Password</label>
@@ -49,7 +63,7 @@ export default function Register() {
                 onChange={onChange}
                 values={values['repass']}
             />
-            <input type="submit" value="Login" />
+            <input type="submit" value="Register" />
             <p>If you already have profile click <Link to="/login">here </Link></p>
         </form>
     </div>

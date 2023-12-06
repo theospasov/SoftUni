@@ -1,21 +1,21 @@
 import * as request from "../lib/request";
 
-const baseUrl = 'http://localhost:3030/jsonstore/comments'
+const baseUrl = 'http://localhost:3030/data/comments'
 
 export const getAll = async(productId) => {
     const query = new URLSearchParams({
-        where: `gameId="${productId}"`
+        where: `productId="${productId}"`,
+        load: `owner=_ownerId:users`,
     })
     const result = await request.get(`${baseUrl}?${query}`)
-    //TODO Fix with migration collection 
-    return Object.values(result)
+
+      return result;
 }
 
-export const add = async ( productId, username, text) => {
+export const add = async ( productId, text) => {
     const newComment = await request.post(baseUrl, {
         productId,
-        username,
-        text
+        text,
     })
 
     return newComment

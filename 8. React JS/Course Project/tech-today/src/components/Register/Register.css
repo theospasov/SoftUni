@@ -1,0 +1,8 @@
+.page-register {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 80vh;
+    background-color: #f4f4f4;
+    padding-top: 4em;
+  }

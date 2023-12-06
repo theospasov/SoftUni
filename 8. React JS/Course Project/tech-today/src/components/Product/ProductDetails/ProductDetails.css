@@ -39,11 +39,91 @@
 
 } 
 
+button {
+    border: none;
+    outline: none;
+  }
+
 .details-brand {
     display: flex;
 }
 
-button {
+.owner-controls {
+    margin-top: 1em;
+}
+
+.button {
+    color: black;
+    text-decoration: none;
+    margin-right: 0.5em;
     padding: 0.8em;
     background-color: rgb(249, 230, 16);
+    border-radius: 0.5em;
 }
+
+.product-comments {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .add-comment-form {
+    margin-bottom: 20px;
+  }
+  
+  .add-comment-form textarea {
+    width: 80%;
+    margin: 0 auto; 
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .add-comment-form input[type="submit"] {
+    background-color: rgb(249, 230, 16); 
+    display: block;
+    margin: 0 auto; 
+    color: #333;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+  }
+  
+  .add-comment-form input[type="submit"]:hover {
+    background-color: #e0a800; 
+  }
+  
+  .product-comments ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .comment {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .comment-user {
+    margin: 0;
+    color: #333;
+  }
+  
+  .comment-text {
+    margin-top: 5px;
+    color: #666;
+  }
+  
+  .product-comments p {
+    margin: 0;
+    color: #777;
+  }
