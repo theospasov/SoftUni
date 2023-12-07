@@ -1,61 +1,93 @@
+textarea {
+  width: 100%;
+  
+}
+
 .page-login {
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    height: 80vh;
-    background-color: #f4f4f4;
-    padding-top: 4em;
-  }
-  
-  .login-form {
-    background-color: #fff;
-    padding: 1em;
-    border-radius: 0.5em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .login-form h1 {
-    text-align: center;
-    color: #333;
-  }
-  
-  .login-form label {
-    display: block;
-    margin-top: 0.5em;
-    font-weight: bold;
-  }
-  
-  .login-form input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .login-form input[type="submit"] {
-    background-color: rgb(249, 230, 16);
-    color: #000;
-    cursor: pointer;
-  }
-  
-  .login-form input[type="submit"]:hover {
-    background-color: rgb(226, 211, 46);
-  }
-  
-  .login-form p {
-    margin-top: 15px;
-    text-align: center;
-  }
-  
-  .login-form a {
-    color: rgb(249, 230, 16);
-    text-decoration: none;
-  }
-  
-  .login-form a:hover {
-    text-decoration: underline;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 80vh;
+  background-color: #f4f4f4;
+  padding-top: 4em;
+}
+
+.login-form {
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h1 {
+  text-align: center;
+  color: #333;
+}
+
+.login-form label {
+  display: block;
+  margin-top: 0.5em;
+  font-weight: bold;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-form input[type="submit"] {
+  background-color: #f9e610;
+  color: #000;
+  cursor: pointer;
+}
+
+.login-form input[type="submit"]:hover {
+  background-color: rgb(226, 211, 46);
+}
+
+.login-form p {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.login-form a {
+  color: rgb(249, 230, 16);
+  text-decoration: none;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: red;
+  margin-top: 0 !important;
+  font-size: 0.8em;
+}
+
+input[type="submit"]:disabled {
+  background: #dddddd;
+  color: white;
+}
+
+input[type="submit"]:disabled:hover {
+  background: #dddddd;
+  color: white;
+}
+
+.error-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffdddd; /* Light red background color */
+  color: #8b0000; /* Dark red text color */
+  padding: 1em;
+  border: 1px solid #8b0000; /* Dark red border */
+  border-radius: 0.5em;
+}

@@ -14,38 +14,53 @@ export const AuthProvider = ({
 }) => {
     const [auth, setAuth] = usePersistedState('auth', {})
     const navigate = useNavigate()
+    const [error, setError] = useState(null);
 
    
 
     const loginSubmitHandler = async (values) => {
-        const result = await authService.login(values.email, values.password)
-
-        setAuth(result)
-        localStorage.setItem('accessToken', result.accessToken)
-        navigate(Path.Home)
+        try {
+            const result = await authService.login(values.email, values.password);
+            setAuth(result);
+            setError(null)
+            localStorage.setItem('accessToken', result.accessToken);
+            navigate(Path.Home);
+        } catch (error) {
+            setError(error); 
+        }
     }
 
     const registerSubmitHandler = async (values) => {
-        const result = await authService.register(values.email, values.password)
-
-        setAuth(result)
-        localStorage.setItem('accessToken', result.accessToken)
-        navigate(Path.Home)
+        try {
+            const result = await authService.register(values.email, values.password, values.username);
+            setAuth(result);
+            setError(null)
+            localStorage.setItem('accessToken', result.accessToken);
+            navigate(Path.Home);
+        } catch (error) {
+            setError(error); 
+        }
     }
 
     const logoutHandler = async () => {
-        setAuth({})
-        localStorage.removeItem('accessToken')
+        try {
+            setAuth({});
+            setError(null)
+            localStorage.removeItem('accessToken');
+        } catch (error) {
+            setError(error);
+        }
     }
 
     const values = {
         loginSubmitHandler,
         registerSubmitHandler,
         logoutHandler,
-        username:  auth.email ,
+        username:  auth.username ,
         email: auth.email,
         userId: auth._id,
-        isAuthenticated: !!auth.accessToken
+        isAuthenticated: !!auth.accessToken,
+        error,
     }
     return (
         <AuthContext.Provider value={values}>

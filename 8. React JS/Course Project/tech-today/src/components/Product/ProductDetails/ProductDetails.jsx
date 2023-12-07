@@ -10,11 +10,13 @@ import AuthContext from '../../../contexts/authContext'
 
 export default function ProductDetails() {
     const navigate = useNavigate()
-    const {email, userId} = useContext(AuthContext)
+    const {email, userId, username} = useContext(AuthContext)
     const [product, setProduct] = useState({})
     const [comments, setComments] = useState([])
     const {productId} = useParams()
+    const {isAuthenticated} = useContext(AuthContext)
    
+    
 
     useEffect(() => {
         // TODO : add validation
@@ -34,10 +36,11 @@ export default function ProductDetails() {
             formData.get('comment-form-text')
         )
             
-        setComments(prevState =>  [...prevState, {...newComment, owner: email}])
+        setComments(prevState =>  [...prevState, {...newComment, owner: {username}}])
+        
         
     }
-   
+    // console.log(comments);
     const isOwner = userId === product._ownerId
    
     const deleteButtonClickHandler = async () => {
@@ -54,13 +57,9 @@ export default function ProductDetails() {
                 <div className='details-details'>
                     <h1 className="details-name">{product.name}</h1>
                     <p className="details-price"> Price: <span>${product.price}</span></p>
-                    <div className="details-brand">
-                        <p>Brand: <span>Apple</span></p>
-                        <img src="https://www.svgrepo.com/show/69341/apple-logo.svg" />
-                    </div>
                     
                     <p>{product.description}</p>
-                    { isOwner && (
+                    { isOwner && isAuthenticated && (
                         <div className='owner-controls'>
                             <Link to={`/products/${product._id}/edit`} className='button'>Edit</Link>
                             <button className='button' onClick={deleteButtonClickHandler}>Delete</button>
@@ -73,18 +72,23 @@ export default function ProductDetails() {
 
             </article>
             <div className='product-comments'>
-                <div className='add-comment'>
-                    <form className="add-comment-form" onSubmit={addCommentHandler}>
-                        {/* <input type="text" name="comment-form-username" placeholder='username' /> */}
-                        <textarea name="comment-form-text" cols="30" rows="3" placeholder='comment'></textarea>
-                        <input type="submit" value="Post comment " />
-                    </form>
-                </div>
+
+                {isAuthenticated && (
+                    <div className='add-comment'>
+                        <form className="add-comment-form" onSubmit={addCommentHandler}>
+
+                            <textarea name="comment-form-text" cols="30" rows="3" placeholder='comment'></textarea>
+                            <input type="submit" value="Post comment " />
+                        </form>
+
+                    </div>
+                )}
+
                 <div className='product-comments'>
                     <ul>
-                        {comments.map(({_id, text, owner: {email}}) => (
+                        {comments.map(({_id, text, owner: {username}}) => (
                             <li key={_id} className='comment'>
-                                <h3 className='comment-user'>{email}</h3>
+                                <p className='comment-user'>{username}</p>
                                 <p className='comment-text'>{text}</p>
                             </li>
                         ))}

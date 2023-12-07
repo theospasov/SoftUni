@@ -1398,7 +1398,6 @@
                 "name": "Macbook Pro (14-inch M3)",
                 "price": "999",
                 "imageUrl": "https://images.hothardware.com/contentimages/article/3292/content/small_angle-2-apple-macbook-pro-14-m2-pro-2023.jpg",
-                "brand": "Apple",
                 "description": "Supercharged by M3 Pro or M3 Max, MacBook Pro takes its power and efficiency further than ever. It delivers exceptional performance whether it’s plugged in or not, and now has even longer battery life. Combined with a stunning Liquid Retina XDR display and all the ports you need — this is a pro laptop without equal.",
                 "_id": "3564027f-adcd-4425-b2c0-1253d2386c0c"
             },
@@ -1406,7 +1405,6 @@
                 "name": "Mini 4 Pro",
                 "price": "799",
                 "imageUrl": "https://stormsend1.djicdn.com/tpc/uploads/carousel/image/f96def8770cb7529d7a98731fa2117dd@ultra.jpg",
-                "brand": "DJI",
                 "description": "DJI Mini 4 Pro is our most advanced mini camera drone to date. [4] It integrates powerful imaging capabilities, omnidirectional obstacle sensing, ActiveTrack 360° with the new Trace Mode, and 20km FHD video transmission, bringing even more things to love for pros and beginners alike.",
                 "_id": "c64db398-91cd-487c-b900-86058c0422f8"
             },
@@ -1415,19 +1413,31 @@
                 "name": "Hero12 Black",
                 "price": "389",
                 "imageUrl": "https://static.gopro.com/assets/blta2b8522e5372af40/bltedfd68d0af398b91/64dcba785572440841e234ba/01-pdp-h12b-gallery-1920.jpg?width=1536&quality=80&auto=webp&disable=upscale",
-                "brand": "GoPro",
                 "description": "The best HERO camera we’ve ever made — HERO12 Black takes GoPro’s best-in-class image quality to the next level with new HDR (High Dynamic Range) 5.3K and 4K video, upgraded HyperSmooth 6.0 video stabilization and an industry-leading 177° field-of-view",
                 "_id": "daf55cd4-9aa1-4b7a-82a9-fbdb74aaa84b"
             },
-            "3564027f-adcd-4425-b2c0-12d3d2386c0z": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                "name": "Aq Bot V3",
-                "price": "1500",
-                "imageUrl": "https://assets1.ignimgs.com/2020/01/29/ZoomerKitty1580313078030.jpg",
-                "brand": "Pena",
-                "description": "Black and white plastic cat",
-                "_id": "3564027f-adcd-4425-b2c0-12d3d2386c0z"
-            },
+            
+    "4531a15c-6b42-4e2d-8a35-f74e582bd97b": {
+        "name": "Dyson Supersonc",
+        "price": "899",
+        "imageUrl": "https://dyson-h.assetsadobe2.com/is/image/content/dam/dyson/products/hair-care/dyson-supersonic/variant/605C-video-thumbnail.png?cropPathE=mobile&fit=stretch,1&wid=640",
+        "description": "dyson hair dryer ",
+        "_id": "4531a15c-6b42-4e2d-8a35-f74e582bd97b"
+    },
+    "53954b24-29da-4524-b060-826da9eef3f1": {
+        "name": "Tesla Model S",
+        "price": "322 000",
+        "imageUrl": "https://images.prismic.io/carwow/c340a77d-af56-4562-abfb-bd5518ccb292_2023+Tesla+Model+X+front+quarter+moving.jpg?fit=clip&q=60&w=750&cs=tinysrgb&auto=format",
+        "description": "tesla car",
+        "_id": "53954b24-29da-4524-b060-826da9eef3f1"
+    },
+    "afb5b47f-8b29-4b50-bf8b-5ea0b7b08cc2": {
+        "name": "XPeng",
+        "price": "100 000 000",
+        "imageUrl": "https://services.meteored.com/img/article/c-est-officiel-en-2025-nous-pourrons-circuler-en-voiture-volante-technologie-transport-1693058457391_768.jpeg",
+        "description": "flying car",
+        "_id": "afb5b47f-8b29-4b50-bf8b-5ea0b7b08cc2"
+    },
         },
     	comments: {
     		"0a272c58-b7ea-4e09-a000-7ec988248f66": {

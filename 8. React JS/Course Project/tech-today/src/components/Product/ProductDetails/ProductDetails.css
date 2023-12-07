@@ -24,9 +24,13 @@
 }
 
 .details-image {
-    flex: 1 1 55%;
-    border-radius: 1em;
-    max-width: 700px;
+  flex: 1 1 55%;
+  border-radius: 1em;
+  max-width: 700px;
+  height: auto;
+  aspect-ratio: 3/2 auto;
+
+  overflow: hidden;
 }
 
 .details-details {
@@ -39,10 +43,6 @@
 
 } 
 
-button {
-    border: none;
-    outline: none;
-  }
 
 .details-brand {
     display: flex;
@@ -59,6 +59,26 @@ button {
     padding: 0.8em;
     background-color: rgb(249, 230, 16);
     border-radius: 0.5em;
+    border: none;
+    outline: none;
+}
+
+button.button {
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.details-price {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: rgb(50, 49, 42); 
+  margin-bottom: 0.5em;
+}
+
+.details-details {
+  font-size: 1.2em;
+  color: #555; 
+  margin-bottom: 1em;
 }
 
 .product-comments {
@@ -70,7 +90,10 @@ button {
   }
   
   .add-comment-form {
-    margin-bottom: 20px;
+    margin-top: 1em;
+    margin-bottom: 1.2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgb(183, 182, 182);
   }
   
   .add-comment-form textarea {
@@ -120,7 +143,8 @@ button {
   
   .comment-text {
     margin-top: 5px;
-    color: #666;
+    color: #000 !important;
+    font-size: 1.2em;
   }
   
   .product-comments p {

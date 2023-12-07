@@ -1,3 +1,15 @@
+.details-button {
+    color: white;
+    background-color: rgb(80, 79, 79);
+    text-decoration: none;
+    padding: 0.3em;
+    border-radius: 0.5em;
+}
+
+.details-button:hover {
+    background-color: #f9e610;
+}
+
 .product-card {
     max-width: 16em;
     background-color: #fff;

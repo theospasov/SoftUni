@@ -1,0 +1,11 @@
+.default-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.default-error h2{
+    font-size: 5em;
+    margin-top: 3em;
+}

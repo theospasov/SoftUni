@@ -2,9 +2,43 @@
     padding: 20px;
     max-width: 1600px;
     margin: 3em auto 0 auto;
-
-    height: 100px;
+    height: 150px;
     background-color: black;
     color: white;
     border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em 0 0 1.5em;
+    justify-content: center;
+}
+
+.footer-nav a {
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-top: 0.2em;
+}
+
+.footer-nav p {
+    font-size: 0.8em;
+    max-width: 25ch
+}
+
+.footer-rights {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.footer-rights p {
+    color: gray;
+}
+
+img.footer-logo {
+    max-width: 7em;
 }

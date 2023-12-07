@@ -1,3 +1,14 @@
+h1 {
+    font-family: 'Pixelify Sans', sans-serif;
+    color: rgb(51, 51, 51);
+
+}
+
+.home-title {
+    font-size: 5em;
+    text-align: center;
+}
+
 .product-grid {
     max-width: 1500px;
     display: flex;
@@ -9,3 +20,4 @@
     align-items: flex-start;
 
 }
+
