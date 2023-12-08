@@ -17,6 +17,7 @@ import Logout from './components/Logout/Logout.jsx'
 import ProductEdit from './components/Product/ProductEdit/ProductEdit.jsx'
 import AuthGuard from './components/guards/AuthGuard.jsx'
 import Default from './components/Default/Default.jsx'
+import Profile from './components/Profile/Profile.jsx'
 
 
 
@@ -38,10 +39,11 @@ function App() {
               <Route path={Path.Home} element={<Home />} />
               <Route path={Path.Login} element={<Login />} />
               <Route path='/register' element={<Register />} />
+              <Route path='/profile' element={<AuthGuard><Profile/></AuthGuard>} />
               <Route path='/products/:productId' element={<ProductDetails />} />
               <Route path={Path.ProductEdit} element={<AuthGuard><ProductEdit/></AuthGuard>}></Route>
               <Route path='/product/add' element={<AuthGuard><ProductAdd /></AuthGuard> } />
-              <Route path={Path.Logout} element={<Logout/>}></Route>
+              <Route path={Path.Logout} element={<AuthGuard><Logout/></AuthGuard>}></Route>
               <Route path='*' element={<Default/>}></Route>
             </Routes>
           </main>

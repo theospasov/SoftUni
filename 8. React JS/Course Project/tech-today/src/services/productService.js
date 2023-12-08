@@ -14,6 +14,17 @@ export async function getOne(productId) {
     return result
 }
 
+export async function getAllUserCreated(userId) {
+    try {
+        const result = await request.get(`${baseUrl}?where=_ownerId%3D"${userId}"`)
+        
+        return result
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
 export async function add(productData) {
     const result = await request.post(baseUrl, productData)
     
@@ -29,6 +40,7 @@ export async function edit(productId, productData) {
 export async function remove(productId) {
     request.remove(`${baseUrl}/${productId}`)
 }
+
 
 
 // Version without request

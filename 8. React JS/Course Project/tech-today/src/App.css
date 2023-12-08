@@ -12,12 +12,12 @@ body {
   background-color: #eee;
 }
 .site {
-  max-width: 1600px;
+  max-width: 1400px;
   margin: 0 auto;
 
 }
 
 .site-main {
-  min-height: 800px;
+  min-height: 400px;
 }
 

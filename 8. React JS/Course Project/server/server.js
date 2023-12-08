@@ -1402,6 +1402,7 @@
                 "_id": "3564027f-adcd-4425-b2c0-1253d2386c0c"
             },
             "c64db398-91cd-487c-b900-86058c0422f8": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 "name": "Mini 4 Pro",
                 "price": "799",
                 "imageUrl": "https://stormsend1.djicdn.com/tpc/uploads/carousel/image/f96def8770cb7529d7a98731fa2117dd@ultra.jpg",
@@ -1409,7 +1410,7 @@
                 "_id": "c64db398-91cd-487c-b900-86058c0422f8"
             },
             "daf55cd4-9aa1-4b7a-82a9-fbdb74aaa84b": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "name": "Hero12 Black",
                 "price": "389",
                 "imageUrl": "https://static.gopro.com/assets/blta2b8522e5372af40/bltedfd68d0af398b91/64dcba785572440841e234ba/01-pdp-h12b-gallery-1920.jpg?width=1536&quality=80&auto=webp&disable=upscale",
@@ -1418,24 +1419,27 @@
             },
             
     "4531a15c-6b42-4e2d-8a35-f74e582bd97b": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         "name": "Dyson Supersonc",
         "price": "899",
         "imageUrl": "https://dyson-h.assetsadobe2.com/is/image/content/dam/dyson/products/hair-care/dyson-supersonic/variant/605C-video-thumbnail.png?cropPathE=mobile&fit=stretch,1&wid=640",
-        "description": "dyson hair dryer ",
+        "description": "The Dyson Supersonic™ hair dryer is engineered to protect hair from extreme heat damage, with fast drying and controlled styling to help increase smoothness by 75%, increase shine by up to 132%, and decrease frizz and flyaways by up to 61%.*",
         "_id": "4531a15c-6b42-4e2d-8a35-f74e582bd97b"
     },
     "53954b24-29da-4524-b060-826da9eef3f1": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         "name": "Tesla Model S",
-        "price": "322 000",
+        "price": "100 000",
         "imageUrl": "https://images.prismic.io/carwow/c340a77d-af56-4562-abfb-bd5518ccb292_2023+Tesla+Model+X+front+quarter+moving.jpg?fit=clip&q=60&w=750&cs=tinysrgb&auto=format",
-        "description": "tesla car",
+        "description": "The Tesla Model S is an all-electric luxury sedan produced by Tesla, known for its high-performance capabilities and long electric range. It features cutting-edge technology, including Autopilot functionality for semi-autonomous driving, a minimalist interior with a large touchscreen display, and a sleek design that contributes to its aerodynamic efficiency.",
         "_id": "53954b24-29da-4524-b060-826da9eef3f1"
     },
     "afb5b47f-8b29-4b50-bf8b-5ea0b7b08cc2": {
-        "name": "XPeng",
-        "price": "100 000 000",
-        "imageUrl": "https://services.meteored.com/img/article/c-est-officiel-en-2025-nous-pourrons-circuler-en-voiture-volante-technologie-transport-1693058457391_768.jpeg",
-        "description": "flying car",
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "name": "Sony WH-1000XM3",
+        "price": "299",
+        "imageUrl": "https://cdn.mos.cms.futurecdn.net/MfGHFkGhpcwwNQ7VikCkej.jpg",
+        "description": "The WH-1000XM3 is a pair of over-ear wireless noise-canceling headphones produced by Sony. Known for its exceptional noise-canceling capabilities, it features industry-leading technology that adapts to ambient sounds for an immersive listening experience. The headphones also boast high-quality audio, touch controls, and a comfortable design, making them popular among audiophiles and frequent travelers.",
         "_id": "afb5b47f-8b29-4b50-bf8b-5ea0b7b08cc2"
     },
         },
@@ -1446,7 +1450,14 @@
     			recipeId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
     			_createdOn: 1614260681375,
     			_id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
-    		}
+    		},
+            "7f1d469a-4df4-4f79-aa81-309f472b5518": {
+    			_ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+    			text: "Looks amazing!",
+    			productId: "3564027f-adcd-4425-b2c0-1253d2386c0c",
+    			_createdOn: 1701985301768,
+    			_id: "7f1d469a-4df4-4f79-aa81-309f472b5518"
+    		},
     	},
     	records: {
     		i01: {

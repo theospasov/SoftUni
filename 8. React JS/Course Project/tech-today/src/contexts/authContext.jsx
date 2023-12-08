@@ -24,7 +24,7 @@ export const AuthProvider = ({
             setAuth(result);
             setError(null)
             localStorage.setItem('accessToken', result.accessToken);
-            navigate(Path.Home);
+            navigate(Path.Profile);
         } catch (error) {
             setError(error); 
         }
@@ -36,7 +36,7 @@ export const AuthProvider = ({
             setAuth(result);
             setError(null)
             localStorage.setItem('accessToken', result.accessToken);
-            navigate(Path.Home);
+            navigate(Path.Profile);
         } catch (error) {
             setError(error); 
         }

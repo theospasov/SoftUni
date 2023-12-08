@@ -13,7 +13,9 @@ export default function Register() {
         email: '',
         username: '',
         password: '',
-        repass: ''
+        repass: '',
+        isEmpty: true
+
     })
     const {values, onChange, onSubmit} = useForm(registerSubmitHandler, {
         email: '',
@@ -80,19 +82,20 @@ export default function Register() {
         if (values.repass != values.password) {
             setErrors(prevState => ({
                 ...prevState,
-                repass: 'Passwords don\'t match'
-        }))
+                repass: 'Passwords don\'t match',
+                
+            }))
         } else {
-            if (errors.repass) {
-                setErrors(prevState => ({
+            setErrors(prevState => ({
                     ...prevState,
-                    repass: ''
+                    repass: '',
+                    isEmpty: false
                 }))
-            }
+            
 
         }
     }
-
+    // console.log(errors);
     return (
         <div className="page-register">
             {error && (<p className='error-message'>{error.message}</p>)}

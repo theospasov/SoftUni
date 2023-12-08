@@ -1,4 +1,4 @@
-.site-footer {
+.siteFooter {
     padding: 20px;
     max-width: 1600px;
     margin: 3em auto 0 auto;
@@ -10,35 +10,29 @@
     justify-content: space-between;
 }
 
-.footer-nav {
+.footerNav {
     display: flex;
     flex-direction: column;
     padding: 0.5em 0 0 1.5em;
     justify-content: center;
 }
 
-.footer-nav a {
-    color: white;
-    font-size: 1.2em;
-    text-decoration: none;
-    margin-top: 0.2em;
-}
 
-.footer-nav p {
+.footerNav p {
     font-size: 0.8em;
     max-width: 25ch
 }
 
-.footer-rights {
+.footerRights {
     display: flex;
     flex-direction: column;
     justify-content: end;
 }
 
-.footer-rights p {
+.footerRights p {
     color: gray;
 }
 
-img.footer-logo {
+img.footerLogo{
     max-width: 7em;
 }

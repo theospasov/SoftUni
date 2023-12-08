@@ -1,0 +1,46 @@
+.user-profile {
+    display: flex;
+    padding: 3em 1em;
+}
+
+.profile-options {
+    /* flex-basis: 20%; */
+    min-width: 200px;
+    max-width: 250px;
+    border-right: 0.2rem dotted gray;
+    padding: 2em 0.5em;
+    margin-right: 1em;
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+}
+
+.profile-products {
+    padding-left: 3em;
+}
+
+
+
+.profile-options li {
+    margin-top: 2em;
+}
+
+.profile-nav {
+    padding: 1em;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 0.5em;
+}
+
+.profile-nav:hover {
+    color: black;
+    background-color: #f9e610;
+    box-shadow: 0 0 1em #f9e610;
+    border: #f9e610;
+}
+.profile-nav-logout {
+    padding: 1em 3.3em;
+
+}
+

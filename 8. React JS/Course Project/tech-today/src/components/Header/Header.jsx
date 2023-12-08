@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 
 import './Header.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHouse, faUser, faIdCardClip } from '@fortawesome/free-solid-svg-icons'
+
 
 import AuthContext from '../../contexts/authContext'
 import Path from '../../paths'
@@ -27,18 +30,22 @@ export const Header = () => {
                 <img src={LogoText} className='header-logo-text' />
                 
                 <ul className='header-nav'>
-                    <li><Link className='nav-home nav' to='/'>Home</Link></li>
+
                     {isAuthenticated 
                     ? (
                         <div className='user'>
-                            <li>Hello {username}</li>
-                            <li><Link className='nav-add nav' to={'/product/add'}>Add New Product</Link></li> 
-                        <li><Link className='nav-logout nav' to={Path.Logout}>Logout</Link></li>
+                            <li className='greeting'>Hey {username} 👋</li>
+                            <li><Link className='nav-home nav' to='/'><FontAwesomeIcon icon={faHouse} /></Link></li>
+                            <li><Link className='nav-profile nav' to='/profile'><FontAwesomeIcon icon={faIdCardClip} /></Link></li>
+                            {/* <li><Link className='nav-add nav' to={'/product/add'}>Add New Product</Link></li>  */}
+                            {/* <li><Link className='nav-logout nav' to={Path.Logout}>Logout</Link></li> */}
+                            
                         </div>
                     )
                     : (
                         <div className='guest'> 
-                            <li><Link className='nav-login nav' to={Path.Login}>Login</Link></li>
+                            <li><Link className='nav-home nav' to='/'><FontAwesomeIcon icon={faHouse} /></Link></li>
+                            <li><Link className='nav-profile nav' to={Path.Login}><FontAwesomeIcon icon={faUser} /></Link></li>
                         </div>
                     )
                     }

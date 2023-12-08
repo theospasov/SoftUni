@@ -9,6 +9,11 @@ h1 {
     text-align: center;
 }
 
+.main-grid {
+    margin: 0 auto;
+    padding: 1em;
+}
+
 .product-grid {
     max-width: 1500px;
     display: flex;

@@ -82,12 +82,12 @@ input[type="submit"]:disabled:hover {
 
 .error-message {
   position: absolute;
-  top: 50%;
+  top: 23%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #ffdddd; /* Light red background color */
-  color: #8b0000; /* Dark red text color */
+  background-color: #ffdddd; 
+  color: #8b0000; 
   padding: 1em;
-  border: 1px solid #8b0000; /* Dark red border */
+  border: 1px solid #8b0000; 
   border-radius: 0.5em;
 }

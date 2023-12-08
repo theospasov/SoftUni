@@ -15,6 +15,7 @@ export default function ProductAdd() {
         price: '',
         imageUrl: '',
         description: '',
+        isEmpty: true
     })
 
     const [generalError, setGeneralError] = useState('');
@@ -82,12 +83,12 @@ export default function ProductAdd() {
                 description: 'Description should be at least 10 characters'
             }))
         } else {
-            if (errors.description) {
                 setErrors(prevState => ({
                     ...prevState,
-                    description: ''
+                    description: '',
+                    isEmpty: false
                 }))
-            }
+        
         }
     }
 

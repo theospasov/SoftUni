@@ -7,7 +7,7 @@
 .product-details {
     padding: 1em;
     margin: 0 auto;
-    max-width: 80%;
+    max-width: 90%;
     display: flex;
     align-items: flex-start;
     gap: 1em;
@@ -151,3 +151,9 @@ button.button {
     margin: 0;
     color: #777;
   }
+
+  .added-products {
+    margin: 0 auto;
+    padding-left: 3em;
+    flex-wrap: wrap;
+}

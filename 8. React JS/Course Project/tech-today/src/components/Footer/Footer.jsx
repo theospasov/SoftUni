@@ -1,23 +1,21 @@
 import { Link } from 'react-router-dom'
 
-import './Footer.css'
 
+// import './Footer.css'
+import FooterCSS from  './Footer.module.css'
 import LogoIconWhite from '../../assets/tt_logo-icon-white.png'
 
 export const Footer = () => {
     return (
-        <footer className="site-footer">
-            <div className='footer-nav'>
-                <p>TechToday is the ultimate place to discover new tech and the coolers gadgets.</p>
-                {/* <Link to={'/'}>Home</Link> */}
-                {/* <Link to={'/login'}>Login</Link>
-                <Link to={'/register'}>Register</Link> */}
+        <footer className={FooterCSS.siteFooter}>
+            <div className={FooterCSS.footerNav}>
+                <p style={{fontWeight: "bold"}}>TechToday is the ultimate place to discover new tech and the coolers gadgets.</p>
             </div>
-            <div className='footer-rights'>
+            <div className={FooterCSS.footerRights}>
                 <p>TechToday© | All rights reserved</p>
             </div>
             <div className='footer-brand'>
-            <img src={LogoIconWhite} className='footer-logo'/>
+            <img src={LogoIconWhite} className={FooterCSS.footerLogo}/>
             
             </div>
         </footer>
