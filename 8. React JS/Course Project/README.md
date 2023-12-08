@@ -7,7 +7,7 @@ TechToday is a dynamic platform designed for technology enthusiasts to explore a
 
 This project serves the purpose of fulfilling the requirements of the React JS October 2023 Course offered by SoftUni.
 
-## Running the Platform
+## Running the Project
 ### Server
 This project uses the SoftUni Practice Server. To start the server, execute the following command in your console:
 ```
@@ -20,7 +20,7 @@ This project utilizes Vite. To launch the development server, run the following 
 npm run dev
 ```
 
-## TechToday Functionality
+## Technical Functionality
 1. Public Part
     1. Catalog / Home page
     2. Product Details
