@@ -1,7 +1,6 @@
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 import './App.css'
-
 
 import {AuthProvider} from './contexts/authContext.jsx'
 import Path from './paths.js'
@@ -20,19 +19,12 @@ import Default from './components/Default/Default.jsx'
 import Profile from './components/Profile/Profile.jsx'
 
 
-
-
-
-
 function App() {
-
- 
 
   return (
       <AuthProvider>
         <div className='site'>
           <Header />
-
 
           <main className='site-main'>
             <Routes>
@@ -47,6 +39,7 @@ function App() {
               <Route path='*' element={<Default/>}></Route>
             </Routes>
           </main>
+
           <Footer />
         </div>
       </AuthProvider>

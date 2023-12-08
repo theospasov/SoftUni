@@ -8,8 +8,6 @@ import Path from "../../paths"
 
 export default function Profile() {
 
-
-
     return (
         <div className="user-profile">
             <ul className="profile-options">
@@ -22,5 +20,3 @@ export default function Profile() {
     )
 }
 
-// http://localhost:3030/data/products?where=_ownerId%3D%2235c62d76-8152-4626-8712-eeb96381bea8%22
-// http://localhost:3030/data/products?where=_ownerId=%2260f0cf0b-34b0-4abd-9769-8c42f830dffc%22

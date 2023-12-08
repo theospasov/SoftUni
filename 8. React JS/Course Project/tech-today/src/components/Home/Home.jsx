@@ -6,7 +6,6 @@ import * as productService from '../../services/productService'
 import './Home.css'
 
 export default function Home() {
-
     const [products, setProducts] = useState([])
 
     useEffect(() => {

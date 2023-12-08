@@ -8,15 +8,11 @@ import Path from "../paths.js";
 const AuthContext = createContext()
 AuthContext.displayName = 'AuthContext'
 
-export const AuthProvider = ({
-    children,
-    value
-}) => {
+export const AuthProvider = ({children}) => {
     const [auth, setAuth] = usePersistedState('auth', {})
     const navigate = useNavigate()
     const [error, setError] = useState(null);
 
-   
 
     const loginSubmitHandler = async (values) => {
         try {

@@ -2,7 +2,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 
 import * as productService from '../../../services/productService'
-import useForm from '../../../hooks/useForm';
 import { useEffect, useState } from 'react';
 
 
@@ -39,7 +38,6 @@ export default function ProductEdit() {
             navigate(`/products/${productId}`)
 
         } catch (error) {
-            // TODO: Error notification
             console.log(error);
         }
 

@@ -17,7 +17,6 @@ export default function ProductAdd() {
         description: '',
         isEmpty: true
     })
-
     const [generalError, setGeneralError] = useState('');
 
     const productAddHandler = async (e) => {

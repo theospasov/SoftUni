@@ -5,7 +5,9 @@ export default function usePersistedState(key, defaultValue) {
         const persistedState = localStorage.getItem(key);
 
         if (persistedState) {
+  
             return JSON.parse(persistedState);
+  
         }
 
         return defaultValue;

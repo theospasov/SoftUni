@@ -10,21 +10,29 @@ import AuthContext from '../../../contexts/authContext'
 
 export default function ProductDetails() {
     const navigate = useNavigate()
-    const {email, userId, username} = useContext(AuthContext)
+    const {userId, username, isAuthenticated} = useContext(AuthContext)
     const [product, setProduct] = useState({})
     const [comments, setComments] = useState([])
     const {productId} = useParams()
-    const {isAuthenticated} = useContext(AuthContext)
    
-    
 
     useEffect(() => {
-        // TODO : add validation
-        productService.getOne(productId)
-            .then(setProduct)
-        commentService.getAll(productId)
-            .then(setComments)
+        const fetchData = async () => {
+            if (productId) {
+                try {
+                    const productData = await productService.getOne(productId)
+                    setProduct(productData)
+
+                    const commentsData = await commentService.getAll(productId)
+                    setComments(commentsData)
+                } catch (error) {
+                    console.error(error)
+                }
+            }
+        }
+        fetchData();
     }, [productId])
+
 
     const addCommentHandler = async (e) => {
         e.preventDefault()
